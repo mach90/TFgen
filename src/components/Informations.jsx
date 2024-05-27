@@ -33,7 +33,7 @@ export default function Informations() {
           <div className="bg-dark1 p-4 rounded-md w-[100%] flex flex-col justify-center items-center">
               <h2 className="text-base font-semibold text-medium1">EPA stands for</h2>
               <p className="mt-2 text-3xl font-bold text-gray-300 md:text-4xl">Emergency Plan of Action</p>
-              <img className="mt-12 hidden md:block w-[80%] sm:w-[75%] mg:w-[70%] lg:w-[65%] xl:w-[60%]  rounded-xl" src="./img/document.png" alt="Document png"/>
+              <img className="mt-12 hidden md:block w-[80%] sm:w-[75%] mg:w-[70%] lg:w-[65%] xl:w-[60%]  rounded-xl" src="./img/epascreenshot.jpg" alt="App screenshot"/>
               <dl className="mt-10 space-y-8 text-base leading-7 text-gray-400 w-[70%] text-justify">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
