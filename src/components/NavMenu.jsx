@@ -9,7 +9,7 @@ export default function NavMenu() {
             <NavLink to="/travelformgenerator"><NavButton active>
                 EPA Generator
             </NavButton></NavLink>
-            <NavLink to="https://github.com" target="_blank" rel="noopener noreferrer"><NavButton><Github/> Source code</NavButton></NavLink>
+            <NavLink to="https://github.com/mach90/epagen" target="_blank" rel="noopener noreferrer"><NavButton><Github/> Source code</NavButton></NavLink>
         </div>
     );
 }
