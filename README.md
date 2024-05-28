@@ -12,6 +12,7 @@
 # Roadmap
 - [x] Functional form to pdf generator
 - [x] Responsive Design
+- [ ] Form correction
 - [ ] Local storage and reset form functionnality
 - [ ] Form validation
 - [ ] Errors handling
