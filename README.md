@@ -12,11 +12,11 @@
 # Roadmap
 - [x] Functional form to pdf generator
 - [x] Responsive Design
-- [ ] Local storage
+- [ ] Local storage and reset form functionnality
 - [ ] Form validation
 - [ ] Errors handling
 - [ ] Improved interactivity (accordions with useRef)
-- [ ] Improved interactivity (animations)
+- [ ] Improved interactivity (eye candies animations)
 - [ ] Refactoring
 
 # Fixed known issues
