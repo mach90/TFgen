@@ -13,10 +13,10 @@ export default {
     },
     extend: {
       colors: {
-        dark1: '#1c252e',
-        dark2: '#12191f',
-        dark3: '#0e141b',
-        medium1: '#5f7c8b',
+        dark1: '#202d37',
+        dark2: '#0e161d',
+        dark3: '#141f28',
+        medium1: '#55646b',
         medium2: '#37474f',
         light1: '#f9fafa',
         light2: '#d2d2d2',

@@ -1,4 +1,4 @@
-import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2} from 'lucide-react';
+import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2, CalendarClock} from 'lucide-react';
 
 export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollToTopSmoothly}) {
   // TailwindCSS classes for form elements
@@ -18,13 +18,15 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       sexePayload: e.target.sexeInput.value,
       dobPayload: e.target.dobInput.value,
       nationalityPayload: e.target.nationalityInput.value,
+      etdPayload: e.target.etdInput.value,
+      etaPayload: e.target.etaInput.value,
       heightPayload: e.target.heightInput.value,
       weightPayload: e.target.weightInput.value,
       hairPayload: e.target.hairInput.value,
       distinctivePayload: e.target.distinctiveInput.value,
       travelOutfitPayload: e.target.travelOutfitInput.value,
       bloodtypePayload: e.target.bloodtypeInput.value,
-      importantMedicationPayload: e.target.importantMedicationInput.value,
+      // importantMedicationPayload: e.target.importantMedicationInput.value,
       currentMedicationPayload: e.target.currentMedicationInput.value,
       medicalDevicesPayload: e.target.medicalDevicesInput.value,
       allergiesPayload: e.target.allergiesInput.value,
@@ -51,7 +53,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       languagesPayload: e.target.languagesInput.value,
       fitnessConditionPayload: e.target.fitnessConditionInput.value,
       swimmingPayload: e.target.swimmingInput.value,
-      outdoorSkillPayload: e.target.outdoorSkillInput.value,
+      // outdoorSkillPayload: e.target.outdoorSkillInput.value,
       hikingExperiencePayload: e.target.hikingExperienceInput.value,
       survivalSkillsPayload: e.target.survivalSkillsInput.value,
       militaryExperiencePayload: e.target.militaryExperienceInput.value,
@@ -61,9 +63,9 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       tripPlanPayload: e.target.tripPlanInput.value,
       groupMembersPayload: e.target.groupMembersInput.value,
       intentionsPayload: e.target.intentionsInput.value,
-      equipmentPayload: e.target.equipmentInput.value,
+      waterFoodSupplyPayload: e.target.waterFoodSupplyInput.value,
       survivalEquipmentPayload: e.target.survivalEquipmentInput.value,
-      joinedDocumentsPayload: e.target.joinedDocumentsInput.value,
+      attachmentsPayload: e.target.attachmentsInput.value,
       thisIsOurDatePayload: new Date(Date.now()).toISOString(),
     }
     // DISPATCH
@@ -80,13 +82,15 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       sexePayload: "",
       dobPayload: "",
       nationalityPayload: "",
+      etdPayload: "",
+      etaPayload: "",
       heightPayload: "",
       weightPayload: "",
       hairPayload: "",
       distinctivePayload: "",
       travelOutfitPayload: "",
       bloodtypePayload: "",
-      importantMedicationPayload: "",
+      // importantMedicationPayload: "",
       currentMedicationPayload: "",
       medicalDevicesPayload: "",
       allergiesPayload: "",
@@ -113,7 +117,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       languagesPayload: "",
       fitnessConditionPayload: "",
       swimmingPayload: "",
-      outdoorSkillPayload: "",
+      // outdoorSkillPayload: "",
       hikingExperiencePayload: "",
       survivalSkillsPayload: "",
       militaryExperiencePayload: "",
@@ -125,7 +129,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       intentionsPayload: "",
       equipmentPayload: "",
       survivalEquipmentPayload: "",
-      joinedDocumentsPayload: "",
+      attachmentsPayload: "",
       thisIsOurDatePayload: "",
     }
     // DISPATCH
@@ -135,13 +139,15 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
     formRoot.sexeInput.value = "";
     formRoot.dobInput.value = "";
     formRoot.nationalityInput.value = "";
+    formRoot.etdInput.value = "";
+    formRoot.etaInput.value = "";
     formRoot.heightInput.value = "";
     formRoot.weightInput.value = "";
-    formRoot. hairInput.value = "";
+    formRoot.hairInput.value = "";
     formRoot.distinctiveInput.value = "";
     formRoot.travelOutfitInput.value = "";
     formRoot.bloodtypeInput.value = "";
-    formRoot.importantMedicationInput.value = "";
+    // formRoot.importantMedicationInput.value = "";
     formRoot.currentMedicationInput.value = "";
     formRoot.medicalDevicesInput.value = "";
     formRoot.allergiesInput.value = "";
@@ -168,7 +174,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
     formRoot.languagesInput.value = "";
     formRoot.fitnessConditionInput.value = "";
     formRoot.swimmingInput.value = "";
-    formRoot.outdoorSkillInput.value = "";
+    // formRoot.outdoorSkillInput.value = "";
     formRoot.hikingExperienceInput.value = "";
     formRoot.survivalSkillsInput.value = "";
     formRoot.militaryExperienceInput.value = "";
@@ -178,9 +184,9 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
     formRoot.tripPlanInput.value = "";
     formRoot.groupMembersInput.value = "";
     formRoot.intentionsInput.value = "";
-    formRoot.equipmentInput.value = "";
+    formRoot.waterFoodSupplyInput.value = "";
     formRoot.survivalEquipmentInput.value = "";
-    formRoot.joinedDocumentsInput.value = "";
+    formRoot.attachmentsInput.value = "";
     // SCROLL
     ScrollToTopSmoothly();
   }
@@ -198,10 +204,10 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       <form className="flex flex-col items-stretch formRoot" onSubmit={(e) => handleSubmit(e)}>
         <fieldset className={formFieldset}>
           <legend className={formLegend}><Fingerprint/>IDENTITY</legend>
-          <label className={formLabel} htmlFor="fullNameInput">Full Name (as appears on passeport)</label>
+          <label className={formLabel} htmlFor="fullNameInput">Full Name</label>
           <input className={formInput} id="fullNameInput" type="text"></input>
 
-          <label className={formLabel} htmlFor="sexeInput">Biological sexe at birth</label>
+          <label className={formLabel} htmlFor="sexeInput">Biological sexe</label>
           <select className={formSelect} id="sexeInput" defaultValue="">
             <option value=""></option>
             <option id="sexeInput1" value="Male">Male</option>
@@ -213,6 +219,15 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
 
           <label className={formLabel} htmlFor="nationalityInput">Nationality</label>
           <input className={formInput} id="nationalityInput" type="text"></input>
+        </fieldset>
+
+        <fieldset className={formFieldset}>
+          <legend className={formLegend}><CalendarClock />LEAVE AND RETURN DATES</legend>
+          <label className={formLabel} htmlFor="etdInput">Leaving date</label>
+          <input className={formInput} id="etdInput" type="datetime-local"></input>
+
+          <label className={formLabel} htmlFor="etaInput">Return date</label>
+          <input className={formInput} id="etaInput" type="datetime-local"></input>
         </fieldset>
 
         <fieldset className={formFieldset}>
@@ -232,7 +247,6 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
 
           <label className={formLabel} htmlFor="travelOutfitInput">Travel outfit</label>
           <textarea className={formInput} id="travelOutfitInput" type="text" placeholder="(ie. hiking pant, hiking boot MT900, fleece)"></textarea>
-
         </fieldset>
 
         <fieldset className={formFieldset}>
@@ -251,8 +265,8 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
               <option id="bloodtypeInput8" value="Oneg">O-</option>
             </select>
 
-            <label className={formLabel} htmlFor="importantMedicationInput">Important medication</label>
-            <textarea className={formInput} id="importantMedicationInput" type="text"></textarea>
+            {/* <label className={formLabel} htmlFor="importantMedicationInput">Important medication</label>
+            <textarea className={formInput} id="importantMedicationInput" type="text"></textarea> */}
 
             <label className={formLabel} htmlFor="currentMedicationInput">Current medication</label>
             <textarea className={formInput} id="currentMedicationInput" type="text"></textarea>
@@ -271,7 +285,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
         </fieldset>
 
         <fieldset className={formFieldset}>
-          <legend className={formLegend}><Car />DRIVER INFORMATIONS</legend>
+          <legend className={formLegend}><Car />VEHICLES</legend>
 
             <label className={formLabel} htmlFor="driverLicenceInput">Driver licence</label>
             <select className={formSelect} id="driverLicenceInput" defaultValue="">
@@ -280,7 +294,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
               <option id="driverInput2" value="Yes">Yes</option>
             </select>
 
-            <label className={formLabel} htmlFor="vehicleTypeColorInput">Vehicle(s) (type and color)</label>
+            <label className={formLabel} htmlFor="vehicleTypeColorInput">Vehicle(s) (make, model and color)</label>
             <input className={formInput} id="vehicleTypeColorInput" type="text" placeholder="(ie. white toyota corolla 2014)"></input>
 
             <label className={formLabel} htmlFor="vehicleRegInput">Vehicle(s) registration</label>
@@ -296,8 +310,8 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
           <label className={formLabel} htmlFor="telephoneInput">Phone number</label>
           <input className={formInput} type="tel" name="phone" id="telephoneInput" placeholder="+"></input>
 
-          <label className={formLabel} htmlFor="communicationDevicesInput">Communication and navigation devices (phones, equipments)</label>
-          <textarea className={formInput} id="communicationDevicesInput" type="text" placeholder="(ie. iPhone 10, 1 external battery, 1 talkie MRS-10T)"></textarea>
+          <label className={formLabel} htmlFor="communicationDevicesInput">Communication devices</label>
+          <textarea className={formInput} id="communicationDevicesInput" type="text" placeholder="(ie. iPhone 10, 1 talkie MRS-10T)"></textarea>
 
           <label className={formLabel} htmlFor="checkInReportInput">Check in reports (when, to who)</label>
           <textarea className={formInput} id="checkInReportInput" type="text" placeholder="(ie. Check in with my family every evening at 8 PM.)"></textarea>
@@ -330,43 +344,31 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
             <option value=""></option>
             <option id="autostopInput1" value="Will never do">Will never do</option>
             <option id="autostopInput2" value="Only as a last resort">Only as a last resort</option>
-            <option id="autostopInput3" value="Rarely, in specific situations">Rarely, in specific situations</option>
-            <option id="autostopInput4" value="Sometimes, if needed">Sometimes, if needed</option>
-            <option id="autostopInput5" value="Often, when convenient">Often, when convenient</option>
-            <option id="autostopInput6" value="Yes, regularly">Yes, regularly</option>
+            <option id="autostopInput3" value="Considered, if needed">Considered if needed</option>
           </select>
 
           <label className={formLabel} htmlFor="drinkingHabitInput">Drinking Habit</label>
           <select className={formSelect} id="drinkingHabitInput" defaultValue="">
             <option value=""></option>
-            <option id="drinkingHabitInput1" value="Never drinks">Never drinks</option>
-            <option id="drinkingHabitInput2" value="Rarely drinks (special occasions)">Rarely drinks</option>
-            <option id="drinkingHabitInput3" value="Occasionally drinks (social settings)">Occasionally drinks</option>
-            <option id="drinkingHabitInput4" value="Regularly drinks (weekends or evenings)">Regularly drinks</option>
-            <option id="drinkingHabitInput5" value="Frequently drinks (most days)">Frequently drinks</option>
-            <option id="drinkingHabitInput6" value="Heavily drinks (daily or binge drinking)">Heavily drinks</option>
+            <option id="drinkingHabitInput1" value="Never drinks">No alcohol</option>
+            <option id="drinkingHabitInput2" value="Occasionnaly drinks">Occasionnally</option>
+            <option id="drinkingHabitInput3" value="Regularly drinks">Regularly</option>
           </select>
 
           <label className={formLabel} htmlFor="smokingHabitInput">Smoking Habit</label>
           <select className={formSelect} id="smokingHabitInput" defaultValue="">
             <option value=""></option>
-            <option id="smokingHabitInput1" value="Never smokes">Never smokes</option>
-            <option id="smokingHabitInput2" value="Rarely smokes (special occasions)">Rarely smokes</option>
-            <option id="smokingHabitInput3" value="Occasionally smokes (social settings)">Occasionally smokes</option>
-            <option id="smokingHabitInput4" value="Regularly smokes (daily or weekly)">Regularly smokes</option>
-            <option id="smokingHabitInput5" value="Frequently smokes (multiple times a day)">Frequently smokes</option>
-            <option id="smokingHabitInput6" value="Heavily smokes (chain smoking)">Heavily smokes</option>
+            <option id="smokingHabitInput1" value="Never smokes">No</option>
+            <option id="smokingHabitInput2" value="Occasionnaly smokes">Occasionnally</option>
+            <option id="smokingHabitInput3" value="Regularly smokes">Regularly</option>
           </select>
 
           <label className={formLabel} htmlFor="drugUseHabitInput">Drug Use Habit</label>
           <select className={formSelect} id="drugUseHabitInput" defaultValue="">
             <option value=""></option>
-            <option id="drugUseHabitInput1" value="Never uses drugs">Never uses drugs</option>
-            <option id="drugUseHabitInput2" value="Rarely uses drugs (special occasions)">Rarely uses drugs</option>
-            <option id="drugUseHabitInput3" value="Occasionally uses drugs (social settings)">Occasionally uses drugs</option>
-            <option id="drugUseHabitInput4" value="Regularly uses drugs (monthly or bi-weekly)">Regularly uses drugs</option>
-            <option id="drugUseHabitInput5" value="Frequently uses drugs (weekly)">Frequently uses drugs</option>
-            <option id="drugUseHabitInput6" value="Heavily uses drugs (daily or multiple times a week)">Heavily uses drugs</option>
+            <option id="drugUseHabitInput1" value="Never use drugs">No</option>
+            <option id="drugUseHabitInput2" value="Occasionnaly use drugs">Occasionnally</option>
+            <option id="drugUseHabitInput3" value="Regularly use drugs">Regularly</option>
           </select>
 
           <label className={formLabel} htmlFor="personalityTraitInput">Personality Trait</label>
@@ -388,17 +390,17 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
             <option id="trustLevelInput3" value="Cautiously Trusting (trusts with caution)">Cautiously Trusting</option>
             <option id="trustLevelInput4" value="Wary (hesitant to trust)">Wary</option>
             <option id="trustLevelInput5" value="Distrustful (rarely trusts)">Distrustful</option>
-            <option id="trustLevelInput6" value="Very Distrustful (does not trust people)">Very Distrustful</option>
+            <option id="trustLevelInput6" value="Very Distrustful (does not trust people at all)">Very Distrustful</option>
           </select>
 
-          <label className={formLabel} htmlFor="confidenceInput">Confidence</label>
+          <label className={formLabel} htmlFor="confidenceInput">Cautiousness</label>
           <select className={formSelect} id="confidenceInput" defaultValue="">
             <option value=""></option>
-            <option id="confidenceInput1" value="Very adventurous">Very adventurous</option>
+            <option id="confidenceInput1" value="Reckless">Reckless</option>
             <option id="confidenceInput2" value="Adventurous">Adventurous</option>
-            <option id="confidenceInput3" value="Cautious">Cautious</option>
-            <option id="confidenceInput4" value="Hesitant">Hesitant</option>
-            <option id="confidenceInput5" value="Very hesistant">Very hesistant</option>
+            <option id="confidenceInput3" value="Moderate">Moderate</option>
+            <option id="confidenceInput4" value="Cautious">Cautious</option>
+            <option id="confidenceInput5" value="Very cautious">Very cautious</option>
           </select>
 
           <label className={formLabel} htmlFor="hobbiesInput">Hobbies</label>
@@ -424,20 +426,20 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
           <label className={formLabel} htmlFor="swimmingInput">Swimming</label>
           <select className={formSelect} id="swimmingInput" defaultValue="">
             <option value=""></option>
-            <option id="swimmingInput1" value="Non-Swimmer (no swimming ability)">Non-Swimmer</option>
+            <option id="swimmingInput1" value="Can't swim">Non-Swimmer</option>
             <option id="swimmingInput2" value="Basic Swimmer (can swim basic strokes)">Basic Swimmer</option>
             <option id="swimmingInput3" value="Proficient Swimmer (strong swimming ability)">Proficient Swimmer</option>
             <option id="swimmingInput4" value="Expert Swimmer (highly skilled and confident in water)">Expert Swimmer</option>
           </select>
 
-          <label className={formLabel} htmlFor="outdoorSkillInput">Outdoor Skill/Experience</label>
+          {/* <label className={formLabel} htmlFor="outdoorSkillInput">Outdoor Skill/Experience</label>
           <select className={formSelect} id="outdoorSkillInput" defaultValue="">
             <option value=""></option>
             <option id="outdoorSkillInput1" value="Novice (limited outdoor experience)">Novice</option>
             <option id="outdoorSkillInput2" value="Intermediate (some outdoor experience)">Intermediate</option>
             <option id="outdoorSkillInput3" value="Experienced (well-versed in outdoor activities)">Experienced</option>
             <option id="outdoorSkillInput4" value="Expert (highly skilled and experienced outdoors)">Expert</option>
-          </select>
+          </select> */}
 
           <label className={formLabel} htmlFor="hikingExperienceInput">Hiking Experience</label>
           <select className={formSelect} id="hikingExperienceInput" defaultValue="">
@@ -451,27 +453,26 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
           <select className={formSelect} id="survivalSkillsInput" defaultValue="">
             <option value=""></option>
             <option id="survivalSkillsInput1" value="None">None</option>
-            <option id="survivalSkillsInput2" value="Basic (rudimentary survival skills)">Basic</option>
-            <option id="survivalSkillsInput3" value="Intermediate (competent in basic survival techniques)">Intermediate</option>
-            <option id="survivalSkillsInput4" value="Advanced (proficient in various survival skills)">Advanced</option>
+            <option id="survivalSkillsInput2" value="Basic survival skills">Basic</option>
+            <option id="survivalSkillsInput3" value="Intermediate survival skills">Intermediate</option>
+            <option id="survivalSkillsInput4" value="Advanced survival skills">Advanced</option>
           </select>
 
-          <label className={formLabel} htmlFor="fightingSkillsInput">Fighting Skills</label>
+          <label className={formLabel} htmlFor="fightingSkillsInput">Fighting ability</label>
           <select className={formSelect} id="fightingSkillsInput" defaultValue="">
             <option value=""></option>
-            <option id="fightingSkillsInput1" value="None">None</option>
-            <option id="fightingSkillsInput2" value="basic">Basic</option>
-            <option id="fightingSkillsInput3" value="intermediate">Intermediate</option>
-            <option id="fightingSkillsInput4" value="advanced">Advanced</option>
-            <option id="fightingSkillsInput5" value="advanced">Advanced</option>
+            <option id="fightingSkillsInput1" value="Never got into a fight">Never got into a fight</option>
+            <option id="fightingSkillsInput2" value="Had a few altercations">Had a few altercations</option>
+            <option id="fightingSkillsInput3" value="Got into a few real fight">Got into a few real fight</option>
+            <option id="fightingSkillsInput4" value="Got into many real fight">Got into many real fight</option>
           </select>
 
           <label className={formLabel} htmlFor="militaryExperienceInput">Military Experience</label>
           <select className={formSelect} id="militaryExperienceInput" defaultValue="">
             <option value=""></option>
             <option id="militaryExperienceInput1" value="None">None</option>
-            <option id="militaryExperienceInput2" value="Basic (basic military training)">Basic</option>
-            <option id="militaryExperienceInput3" value="Served (served in military)">Served</option>
+            <option id="militaryExperienceInput2" value="Basic training">Basic training</option>
+            <option id="militaryExperienceInput3" value="Served in the military">Served</option>
           </select>
 
           <label className={formLabel} htmlFor="medicSkillsInput">Medic Skills</label>
@@ -486,44 +487,43 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
         </fieldset>
 
         <fieldset className={formFieldset}>
-          <legend className={formLegend}><Route />TRIP PLANNING</legend>
-
-          <label className={formLabel} htmlFor="paperMoneyInput">Paper money subsitance (days)</label>
-          <input className={formInput} id="paperMoneyInput" type="text" placeholder="(ie. Enough to survive 5 days)"></input>
-
-          <label className={formLabel} htmlFor="tripPlanInput">Day to day plan (stations, trails, roads, resting areas, landmarks, POIs etc.)</label>
-          <textarea className={formInput} id="tripPlanInput" type="text" placeholder="(ie. Empty)"></textarea>
-
-        </fieldset>
-
-        <fieldset className={formFieldset}>
           <legend className={formLegend}><Users />GROUP MEMBERS</legend>
 
-          <label className={formLabel} htmlFor="groupMembersInput">Group members (names and contact)</label>
+          <label className={formLabel} htmlFor="groupMembersInput">Group members (names, age, sexe, contact infos)</label>
           <textarea className={formInput} id="groupMembersInput" type="text"></textarea>
         </fieldset>
 
         <fieldset className={formFieldset}>
-          <legend className={formLegend}><RouteOff />FORESEABLE PROBLEMS & INTENTIONS</legend>
+          <legend className={formLegend}><Route />TRIP PLAN</legend>
 
-          <label className={formLabel} htmlFor="intentionsInput">Intentions</label>
+          <label className={formLabel} htmlFor="paperMoneyInput">Paper money subsitance (days)</label>
+          <input className={formInput} id="paperMoneyInput" type="text" placeholder="(ie. Enough for X days)"></input>
+
+          <label className={formLabel} htmlFor="tripPlanInput">Day to day plan (stations, trails, roads, resting areas, landmarks, POIs etc.)</label>
+          <textarea className={formInput} id="tripPlanInput" type="text" placeholder="(ie. Day1..... Day2.....)"></textarea>
+        </fieldset>
+
+        <fieldset className={formFieldset}>
+          <legend className={formLegend}><RouteOff />POTENTIAL ISSUES</legend>
+
+          <label className={formLabel} htmlFor="intentionsInput">Planned decisions and actions for potential issues</label>
           <textarea className={formInput} id="intentionsInput" type="text" placeholder="(ie. What will you do if anything goes bad, backup plans for each step of the trip)"></textarea>
         </fieldset>
 
         <fieldset className={formFieldset}>
           <legend className={formLegend}><Backpack />EQUIPMENT</legend>
 
-          <label className={formLabel} htmlFor="equipmentInput">Equipment</label>
-          <textarea className={formInput} id="equipmentInput" type="text" placeholder="(ie. Empty)"></textarea>
+          <label className={formLabel} htmlFor="waterFoodSupplyInput">Water/Food supply (days)</label>
+          <textarea className={formInput} id="waterFoodSupplyInput" type="text" placeholder="(ie. 2L water, 2 days of food)"></textarea>
 
           <label className={formLabel} htmlFor="survivalEquipmentInput">Survival equipment</label>
-          <textarea className={formInput} id="survivalEquipmentInput" type="text" placeholder="(ie. Empty)"></textarea>
+          <textarea className={formInput} id="survivalEquipmentInput" type="text" placeholder="(ie. Tent, Pocket knife, Water filter, First aid kit, Waterproof clothing, Firearm, Warm clothing, Signal mirror, Whistle, Matches/lighter, Stove w/fuel, Flashlight, GPS, Compass, Map, SPOT locator device, Avalanche beacon, Avalanche probe, Bear bangers, Bear spray, Life jacket etc.)"></textarea>
         </fieldset>
 
         <fieldset className={formFieldset}>
-          <legend className={formLegend}><Paperclip />JOINED DOCUMENTS</legend>
-          <label className={formLabel} htmlFor="joinedDocumentsInput">Joined documents</label>
-          <textarea className={formInput} id="joinedDocumentsInput" type="text" placeholder="(ie. Map, planning etc.)"></textarea>
+          <legend className={formLegend}><Paperclip />ATTACHMENTS</legend>
+          <label className={formLabel} htmlFor="attachmentsInput">Attachments</label>
+          <textarea className={formInput} id="attachmentsInput" type="text" placeholder="(ie. Map, detailed planning etc.)"></textarea>
         </fieldset>
 
         <div className='flex flex-row fixed bottom-5 right-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>

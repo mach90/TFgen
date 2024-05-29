@@ -34,7 +34,7 @@ export default function Description() {
             </div>
             <div className="mt-6">
                 <NavLink to="travelformgenerator">
-                    <NavButton bounce>
+                    <NavButton active>
                         Get started now
                     </NavButton>
                 </NavLink>
