@@ -1,23 +1,16 @@
 # EPAgen
 
 ## What is it ?
-...
-
-## Why use it ?
-...
-
-## How to use it ?
-...
+This app uses [React-PDF](https://react-pdf.org/) to generate a pdf document from a form.
+The document generated is an Emergency Plan of Action to be shared with trusted individuals in order to take appropriate actions in case of an emergency during your trip.
 
 # Roadmap
 - [x] Functional form to pdf generator
 - [x] Responsive Design
-- [ ] Form correction
-- [ ] Local storage and reset form functionnality
+- [x] Reset form
+- [x] Refresh page warning
 - [ ] Form validation
 - [ ] Errors handling
-- [ ] Improved interactivity (accordions with useRef)
-- [ ] Improved interactivity (eye candies animations)
 - [ ] Refactoring
 
 # Fixed known issues

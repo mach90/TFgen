@@ -24,24 +24,24 @@
      inkscape:deskcolor="#505050"
      showgrid="false"
      inkscape:zoom="15.052632"
-     inkscape:cx="26.872378"
-     inkscape:cy="18.933566"
+     inkscape:cx="7.8723774"
+     inkscape:cy="18.999999"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg193" />
+     inkscape:current-layer="g704" />
   <g
      id="g704"
      transform="matrix(1.0827135,0,0,1.1169797,-0.65048395,-1.0388692)"
      style="stroke-width:0.909328">
     <path
-       style="fill:#ececec;stroke:none;stroke-width:17.1841;stroke-linecap:square;stroke-linejoin:bevel;paint-order:fill markers stroke;stop-color:#000000"
+       style="fill:#5b927c;stroke:none;stroke-width:17.1841;stroke-linecap:square;stroke-linejoin:bevel;paint-order:fill markers stroke;stop-color:#000000;fill-opacity:1"
        d="M 0.60079047,17.538461 9.9159317,0.9300699 18.79781,11.039526 Z"
        id="path482" />
     <path
-       style="fill:#d45500;stroke:none;stroke-width:17.1841;stroke-linecap:square;stroke-linejoin:bevel;paint-order:fill markers stroke;stop-color:#000000"
+       style="fill:#d33500;stroke:none;stroke-width:17.1841;stroke-linecap:square;stroke-linejoin:bevel;paint-order:fill markers stroke;stop-color:#000000;fill-opacity:1"
        d="m 16.409091,12.555944 3.587413,7.174825 c 0,0 -17.538462,-1.86014 -17.2727278,-2.125874 0.2657343,-0.265734 13.6853148,-5.048951 13.6853148,-5.048951 z"
        id="path646" />
   </g>

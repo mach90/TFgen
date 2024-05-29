@@ -8,22 +8,22 @@ const features = [
   {
     name: 'What is it ?',
     description:
-      'An Emergency Plan of Action is a travel document detailing your whereabout, travel plans and personnality, shared with your family, friends and eventual services such as park rangers.',
+      "An Emergency Plan of Action is a document storing informations about you and your travel plan. It's shared with family, friends, and relevant services to aid in potential emergencies.",
     icon: InformationCircleIcon,
   },
   {
     name: 'Why you should have one ?',
-    description: 'It can save your life by allowing the right people to take appropriate action at the appropriate moment if something should happen to you during your trip.',
+    description: "It can be life-saving, enabling swift and appropriate action by trusted individuals and services during emergencies.",
     icon: HandThumbUpIcon,
   },
   {
-    name: 'Why is timing crucial ?',
-    description: 'After 48h the probability of retrieval are drastically reduced.',
+    name: 'Swift and appropriate action ?',
+    description: 'After 48h the probability of retrieval and survival are drastically reduced, this is why the emergency services must be alerted as soon as possible when the emergency situation is confirmed.',
     icon: ClockIcon,
   },
   {
-    name: 'Why so much details ?',
-    description: 'It will help emergency services understand how you think and behave.',
+    name: 'Precision and details are important',
+    description: 'It will help emergency services understand you and the situation as precisely as possible in order to take appropriate actions.',
     icon: IdentificationIcon,
   },
 ]

@@ -8,7 +8,7 @@ export default function NavLogo() {
                 <img src={LogoSVG} alt="🏕️" />
             </NavLink>
             <NavLink to='/'>
-                <h1 className="text-xl font-bold tracking-tight text-gray-300 hover:text-gray-200">EPAgen</h1>
+                <h1 className="text-xl font-bold tracking-tight px-1 text-[#4a4437] hover:text-[#665e4c] md:text-gray-200 md:hover:text-gray-50">EPAgen</h1>
             </NavLink>
         </div>
     );

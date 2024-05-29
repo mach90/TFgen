@@ -1,8 +1,7 @@
-import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, ArrowUpFromDot} from 'lucide-react';
-import { useEffect, useState } from 'react';
-
+import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2} from 'lucide-react';
 
 export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollToTopSmoothly}) {
+  // TailwindCSS classes for form elements
   const formFieldset = "bg-dark1 px-4 py-6 rounded-md text-sm font-semibold flex flex-col gap-1 my-8 shadow-lg shadow-gray-950/50";
   const formLegend = "text-teal-600 bg-dark1 px-4 py-2 rounded-lg flex gap-2 items-center";
   const formLabel = "text-gray-500 text-start";
@@ -10,8 +9,10 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
   const formSelect = "bg-dark3 text-bright1 p-2";
   const formButton = "text-gray-300 bg-teal-800 hover:bg-teal-600 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
 
+  // Submit form
   function handleSubmit(e) {
     e.preventDefault();
+    // PAYLOAD
     const formPayload = {
       fullNamePayload: e.target.fullNameInput.value,
       sexePayload: e.target.sexeInput.value,
@@ -65,39 +66,136 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
       joinedDocumentsPayload: e.target.joinedDocumentsInput.value,
       thisIsOurDatePayload: new Date(Date.now()).toISOString(),
     }
-    // console.log(formPayload);
+    // DISPATCH
     dispatch({type: "formSubmitted", payload: formPayload});
   }
 
-  const [controlsVisibility, setControlsVisibility] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition >= 400) {
-        setControlsVisibility(true);
-      } else {
-        setControlsVisibility(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  // Reset form
+  function resetForm(e){
+    const formRoot = e.target.closest('.formRoot');
+    e.preventDefault();
+    // PAYLOAD
+    const resetPayload = {
+      fullNamePayload: "",
+      sexePayload: "",
+      dobPayload: "",
+      nationalityPayload: "",
+      heightPayload: "",
+      weightPayload: "",
+      hairPayload: "",
+      distinctivePayload: "",
+      travelOutfitPayload: "",
+      bloodtypePayload: "",
+      importantMedicationPayload: "",
+      currentMedicationPayload: "",
+      medicalDevicesPayload: "",
+      allergiesPayload: "",
+      psyConditionPayload: "",
+      otherMedicalInfosPayload: "",
+      driverLicencePayload: "",
+      vehicleTypeColorPayload: "",
+      vehicleRegPayload: "",
+      vehicleRentalAgencyPayload: "",
+      telephonePayload: "",
+      communicationDevicesPayload: "",
+      checkInReportPayload: "",
+      signalCoveragePayload: "",
+      stayingPayload: "",
+      contactsPayload: "",
+      autostopPayload: "",
+      drinkingHabitPayload: "",
+      smokingHabitPayload: "",
+      drugUseHabitPayload: "",
+      personalityTraitPayload: "",
+      trustLevelPayload: "",
+      confidencePayload: "",
+      hobbiesPayload: "",
+      languagesPayload: "",
+      fitnessConditionPayload: "",
+      swimmingPayload: "",
+      outdoorSkillPayload: "",
+      hikingExperiencePayload: "",
+      survivalSkillsPayload: "",
+      militaryExperiencePayload: "",
+      fightingSkillsPayload: "",
+      medicSkillsPayload: "",
+      paperMoneyPayload: "",
+      tripPlanPayload: "",
+      groupMembersPayload: "",
+      intentionsPayload: "",
+      equipmentPayload: "",
+      survivalEquipmentPayload: "",
+      joinedDocumentsPayload: "",
+      thisIsOurDatePayload: "",
+    }
+    // DISPATCH
+    dispatch({type: "formSubmitted", payload: resetPayload});
+    // FORM INPUT RESET
+    formRoot.fullNameInput.value = "";
+    formRoot.sexeInput.value = "";
+    formRoot.dobInput.value = "";
+    formRoot.nationalityInput.value = "";
+    formRoot.heightInput.value = "";
+    formRoot.weightInput.value = "";
+    formRoot. hairInput.value = "";
+    formRoot.distinctiveInput.value = "";
+    formRoot.travelOutfitInput.value = "";
+    formRoot.bloodtypeInput.value = "";
+    formRoot.importantMedicationInput.value = "";
+    formRoot.currentMedicationInput.value = "";
+    formRoot.medicalDevicesInput.value = "";
+    formRoot.allergiesInput.value = "";
+    formRoot.psyConditionInput.value = "";
+    formRoot.otherMedicalInfosInput.value = "";
+    formRoot.driverLicenceInput.value = "";
+    formRoot.vehicleTypeColorInput.value = "";
+    formRoot.vehicleRegInput.value = "";
+    formRoot.vehicleRentalAgencyInput.value = "";
+    formRoot.telephoneInput.value = "";
+    formRoot.communicationDevicesInput.value = "";
+    formRoot.checkInReportInput.value = "";
+    formRoot.signalCoverageInput.value = "";
+    formRoot.stayingInput.value = "";
+    formRoot.contactsInput.value = "";
+    formRoot.autostopInput.value = "";
+    formRoot.drinkingHabitInput.value = "";
+    formRoot.smokingHabitInput.value = "";
+    formRoot.drugUseHabitInput.value = "";
+    formRoot.personalityTraitInput.value = "";
+    formRoot.trustLevelInput.value = "";
+    formRoot.confidenceInput.value = "";
+    formRoot.hobbiesInput.value = "";
+    formRoot.languagesInput.value = "";
+    formRoot.fitnessConditionInput.value = "";
+    formRoot.swimmingInput.value = "";
+    formRoot.outdoorSkillInput.value = "";
+    formRoot.hikingExperienceInput.value = "";
+    formRoot.survivalSkillsInput.value = "";
+    formRoot.militaryExperienceInput.value = "";
+    formRoot.fightingSkillsInput.value = "";
+    formRoot.medicSkillsInput.value = "";
+    formRoot.paperMoneyInput.value = "";
+    formRoot.tripPlanInput.value = "";
+    formRoot.groupMembersInput.value = "";
+    formRoot.intentionsInput.value = "";
+    formRoot.equipmentInput.value = "";
+    formRoot.survivalEquipmentInput.value = "";
+    formRoot.joinedDocumentsInput.value = "";
+    // SCROLL
+    ScrollToTopSmoothly();
+  }
   
+  // JSX
   return (
     <div className='gap-4 w-[100%]'>
       <div className="text-bright1 text-center bg-dark3 p-4 mb-10 rounded-md border border-bright1">
-        <p>None of the informations you write bellow are saved anywhere.</p>
-        <p>Generated pdf document is not saved anywhere.</p>
-        <p>Share copies to trusted contacts only.</p>
-        <p>Keep one copy with you, secured.</p>
+        <p><strong>This app does not collect or store any informations.</strong></p>
+        <p>PDF document is not processed or saved anywhere except in your browser and computer.</p>
+        <p><strong>Share copies to trusted contacts only.</strong></p>
+        <p><strong>Keep one copy with you, secured.</strong></p>
       </div>
 
-      <form className="flex flex-col items-stretch" onSubmit={(e) => handleSubmit(e)}>
+      <form className="flex flex-col items-stretch formRoot" onSubmit={(e) => handleSubmit(e)}>
         <fieldset className={formFieldset}>
           <legend className={formLegend}><Fingerprint/>IDENTITY</legend>
           <label className={formLabel} htmlFor="fullNameInput">Full Name (as appears on passeport)</label>
@@ -129,7 +227,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
           <label className={formLabel} htmlFor="hairInput">Hair (color and length)</label>
           <input className={formInput} id="hairInput" type="text" placeholder="(ie. crewcut, brown)"></input>
 
-          <label className={formLabel} htmlFor="distinctiveInput">Distinctive (glasses, tattoes, scars etc.)</label>
+          <label className={formLabel} htmlFor="distinctiveInput">Distinctive signs (glasses, tattoes, scars etc.)</label>
           <textarea className={formInput} id="distinctiveInput" type="text" placeholder="(ie. glasses, tribal tattoo right arm)"></textarea>
 
           <label className={formLabel} htmlFor="travelOutfitInput">Travel outfit</label>
@@ -165,7 +263,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
             <label className={formLabel} htmlFor="allergiesInput">Allergies</label>
             <textarea className={formInput} id="allergiesInput" type="text"></textarea>
 
-            <label className={formLabel} htmlFor="psyConditionInput">Psychological condition and state</label>
+            <label className={formLabel} htmlFor="psyConditionInput">Mental state and psychological condition</label>
             <textarea className={formInput} id="psyConditionInput" type="text"></textarea>
 
             <label className={formLabel} htmlFor="otherMedicalInfosInput">Other useful medical informations</label>
@@ -198,10 +296,10 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
           <label className={formLabel} htmlFor="telephoneInput">Phone number</label>
           <input className={formInput} type="tel" name="phone" id="telephoneInput" placeholder="+"></input>
 
-          <label className={formLabel} htmlFor="communicationDevicesInput">Communication devices (phones, equipments)</label>
+          <label className={formLabel} htmlFor="communicationDevicesInput">Communication and navigation devices (phones, equipments)</label>
           <textarea className={formInput} id="communicationDevicesInput" type="text" placeholder="(ie. iPhone 10, 1 external battery, 1 talkie MRS-10T)"></textarea>
 
-          <label className={formLabel} htmlFor="checkInReportInput">Check in (when, to who)</label>
+          <label className={formLabel} htmlFor="checkInReportInput">Check in reports (when, to who)</label>
           <textarea className={formInput} id="checkInReportInput" type="text" placeholder="(ie. Check in with my family every evening at 8 PM.)"></textarea>
 
           <label className={formLabel} htmlFor="signalCoverageInput">Signal coverage expected</label>
@@ -428,10 +526,10 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
           <textarea className={formInput} id="joinedDocumentsInput" type="text" placeholder="(ie. Map, planning etc.)"></textarea>
         </fieldset>
 
-        {controlsVisibility && <div className='flex flex-row fixed bottom-5 right-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>
-          <button className="text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2" onClick={ScrollToTopSmoothly}><ArrowUpFromDot /></button>
+        <div className='flex flex-row fixed bottom-5 right-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>
           <button className={formButton} id="submitForm" type="submit" onClick={ScrollToDocumentSmoothly}>GENERATE <FileText /></button>
-        </div>}
+          <button className="text-gray-300 bg-red-500 hover:bg-red-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2" id="resetForm" onClick={resetForm}><Trash2 /></button>
+        </div>
       </form>
     </div>
   );

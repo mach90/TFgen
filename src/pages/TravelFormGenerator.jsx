@@ -1,18 +1,20 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { PDFViewer } from '@react-pdf/renderer';
 import MyDocument from '../components/MyDocument';
 import TravelForm from '../components/TravelForm';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
+import { ArrowUpFromDot } from 'lucide-react';
 
+// Initial State of the form
 const initialState = {
     fullName: "",
     sexe: "",
     dob: "",
     nationality: "",
-    height: null,
-    weight: null,
+    height: "",
+    weight: "",
     hair: "",
     distinctive: "",
     travelOutfit: "",
@@ -27,7 +29,7 @@ const initialState = {
     vehicleTypeColor: "",
     vehicleReg: "",
     vehicleRentalAgency: "",
-    telephone: null,
+    telephone: "",
     communicationDevices: "",
     checkInReport: "",
     signalCoverage: "",
@@ -60,6 +62,7 @@ const initialState = {
     thisIsOurDate: "",
 }
 
+// Reducer for the form
 function reducer(state, action) {
     switch(action.type) {
         case "formSubmitted": return {
@@ -121,14 +124,28 @@ function reducer(state, action) {
 }
 
 export default function TravelFormGenerator() {
+    // STATE Controls buttons visibility
+    const [controlsVisibility, setControlsVisibility] = useState(false);
+
+    // useReducer for the form
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    // Scroll quickly to the top of the page
     function ScrollToTop(){
         window.scrollTo({
             top: 0,
         });
     }
 
+    // Scroll smoothly to the id of the PDV viewer
+    function ScrollToDocumentSmoothly() {
+        const documentViewerGenerated = document.getElementById('documentViewerGenerated');
+        if (documentViewerGenerated) {
+          documentViewerGenerated.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Adjusted block to 'start' for better alignment
+        }
+      }
+    
+    // Scroll smoothly to the top of the page
     function ScrollToTopSmoothly(){
         window.scrollTo({
             top: 0,
@@ -136,29 +153,60 @@ export default function TravelFormGenerator() {
         });
     }
 
-    function ScrollToDocumentSmoothly() {
-        const hophophop = document.getElementById('hophophop');
-        console.log('Element:', hophophop); // Check if element is retrieved
-        if (hophophop) {
-          hophophop.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Adjusted block to 'start' for better alignment
-        }
-      }
-
+    // When the page is mounted, the view scroll to top
     useEffect(() => {
         ScrollToTop();
     }, []);
 
+    // Effect scroll trigger set Controls buttons visibility true/false
+    useEffect(() => {
+        const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition >= 400) {
+            setControlsVisibility(true);
+        } else {
+            setControlsVisibility(false);
+        }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // Before unload ask for confirmation to leave the page
+    useEffect(() => {
+        const handleBeforeUnload = (e) => {
+            const confirmationMessage = 'Form will be lost. Are you sure you want to leave?';
+            e.preventDefault(); // Most browsers still require this for a custom dialog
+            e.returnValue = confirmationMessage; // This custom message will not be shown in most modern browsers
+            return confirmationMessage; // This is necessary for older browsers
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
+
+    // JSX
     return (
         <div className="bg-dark3 min-h-screen flex flex-col justify-between">
             <Header/>
             <Container>
                 <TravelForm dispatch={dispatch} ScrollToDocumentSmoothly={ScrollToDocumentSmoothly} ScrollToTopSmoothly={ScrollToTopSmoothly} />
             </Container>
-            <Container containerID={'hophophop'}>
-                <PDFViewer Toolbar={true} className="w-[100%] h-screen">
+            <Container containerID={'documentViewerGenerated'}>
+                <PDFViewer className="w-[100%] h-screen">
                     <MyDocument state={state} />
                 </PDFViewer>
             </Container>
+            {controlsVisibility && <div className='flex flex-row fixed bottom-5 left-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>
+            <button className="text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2" onClick={ScrollToTopSmoothly}><ArrowUpFromDot /></button>
+            </div>}
             <Footer/>
         </div>
     )
