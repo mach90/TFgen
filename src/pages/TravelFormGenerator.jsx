@@ -1,11 +1,14 @@
 import { useEffect, useReducer, useState } from "react";
-import { PDFViewer } from '@react-pdf/renderer';
+import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import MyDocument from '../components/MyDocument';
 import TravelForm from '../components/TravelForm';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
 import { ArrowUpFromDot } from 'lucide-react';
+import NavButton from "../components/NavButton";
+import { FileText } from 'lucide-react';
+
 
 // Initial State of the form
 const initialState = {
@@ -204,7 +207,12 @@ export default function TravelFormGenerator() {
                 <TravelForm dispatch={dispatch} ScrollToDocumentSmoothly={ScrollToDocumentSmoothly} ScrollToTopSmoothly={ScrollToTopSmoothly} />
             </Container>
             <Container containerID={'documentViewerGenerated'}>
-                <PDFViewer className="w-[100%] h-screen">
+                <PDFDownloadLink document={<MyDocument state={state}/>} fileName="somename.pdf">
+                    {({ loading }) =>
+                        loading ? <NavButton disabled>Generating document...</NavButton> : <NavButton active>Download <FileText /></NavButton>
+                    }
+                </PDFDownloadLink>
+                <PDFViewer className="w-[100%] h-screen" showToolbar={true}>
                     <MyDocument state={state} />
                 </PDFViewer>
             </Container>

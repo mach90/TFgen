@@ -1,4 +1,4 @@
-export default function NavButton({children, active, bounce, onMouseOver, onMouseOut}) {
+export default function NavButton({children, active, bounce, disabled, onMouseOver, onMouseOut}) {
     return (
       <>
       {active &&
@@ -6,7 +6,12 @@ export default function NavButton({children, active, bounce, onMouseOver, onMous
           {children}
         </button>
       }
-      {!active && !bounce &&
+      {disabled &&
+        <button disabled onMouseOver={onMouseOver} onMouseOut={onMouseOut} type="button" className="text-gray-300 bg-gray-700 hover:bg-gray-600 hover:text-white rounded-md px-3 py-2 text-base font-medium flex gap-2">
+          {children}
+        </button>
+      }
+      {!active && !bounce && !disabled &&
         <button onMouseOver={onMouseOver} onMouseOut={onMouseOut} type="button" className="text-gray-300 bg-gray-700 hover:bg-gray-600 hover:text-white rounded-md px-3 py-2 text-base font-medium flex gap-2">
           {children}
         </button>

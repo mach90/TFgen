@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 export default function Header() {
     return (
         <div className="bg-[url('./img/headerBackground.jpg')] bg-cover bg-center">
-            <div className="px-[2vw] py-16 xl:px-[15vw]">
+            <div className="px-[2vw] py-16 md:px-[4vw] lg:px-[6vw] xl:px-[12vw]">
                 <NavBar/>
             </div>
             <div>

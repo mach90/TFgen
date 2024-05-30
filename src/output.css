@@ -1042,6 +1042,11 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mx-\[4vw\] {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1056,6 +1061,11 @@ video {
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:px-\[4vw\] {
+    padding-left: 4vw;
+    padding-right: 4vw;
   }
 
   .md\:text-2xl {
@@ -1080,8 +1090,23 @@ video {
 }
 
 @media (min-width: 976px) {
+  .lg\:mx-\[8vw\] {
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+
+  .lg\:mx-\[6vw\] {
+    margin-left: 6vw;
+    margin-right: 6vw;
+  }
+
   .lg\:w-\[65\%\] {
     width: 65%;
+  }
+
+  .lg\:px-\[6vw\] {
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 
   .lg\:text-5xl {
@@ -1091,9 +1116,29 @@ video {
 }
 
 @media (min-width: 1440px) {
-  .xl\:mx-\[15vw\] {
-    margin-left: 15vw;
-    margin-right: 15vw;
+  .xl\:mx-\[10vw\] {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+
+  .xl\:mx-\[2vw\] {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+  .xl\:mx-\[4vw\] {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+  .xl\:mx-\[8vw\] {
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+
+  .xl\:mx-\[12vw\] {
+    margin-left: 12vw;
+    margin-right: 12vw;
   }
 
   .xl\:w-\[60\%\] {
@@ -1103,5 +1148,10 @@ video {
   .xl\:px-\[15vw\] {
     padding-left: 15vw;
     padding-right: 15vw;
+  }
+
+  .xl\:px-\[12vw\] {
+    padding-left: 12vw;
+    padding-right: 12vw;
   }
 }
