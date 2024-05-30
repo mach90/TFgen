@@ -1,6 +1,10 @@
-import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2, CalendarClock} from 'lucide-react';
+import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2, CalendarClock, Download} from 'lucide-react';
+import { useState } from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import NavButton from './NavButton';
+import MyDocument from './MyDocument';
 
-export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollToTopSmoothly}) {
+export default function TravelForm({state, dispatch, ScrollToDocumentSmoothly, ScrollToTopSmoothly}) {
   // TailwindCSS classes for form elements
   const formFieldset = "bg-dark1 px-4 py-6 rounded-md text-sm font-semibold flex flex-col gap-1 my-8 shadow-lg shadow-gray-950/50";
   const formLegend = "text-teal-600 bg-dark1 px-4 py-2 rounded-lg flex gap-2 items-center";
@@ -8,6 +12,8 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
   const formInput = "bg-dark3 text-bright1 p-2";
   const formSelect = "bg-dark3 text-bright1 p-2";
   const formButton = "text-gray-300 bg-teal-800 hover:bg-teal-600 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
+
+  const [editing, setEditing] = useState(true);
 
   // Submit form
   function handleSubmit(e) {
@@ -70,6 +76,8 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
     }
     // DISPATCH
     dispatch({type: "formSubmitted", payload: formPayload});
+    // EDITING STATE CHANGE
+    setEditing(false);
   }
 
   // Reset form
@@ -187,10 +195,18 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
     formRoot.waterFoodSupplyInput.value = "";
     formRoot.survivalEquipmentInput.value = "";
     formRoot.attachmentsInput.value = "";
+    // EDITING STATE
+    setEditing(true);
+
     // SCROLL
     ScrollToTopSmoothly();
   }
   
+  // Detect form edition
+  function detectEdition(){
+    if(editing === false) setEditing(true);
+  }
+
   // JSX
   return (
     <div className='gap-4 w-[100%]'>
@@ -201,7 +217,7 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
         <p><strong>Keep one copy with you, secured.</strong></p>
       </div>
 
-      <form className="flex flex-col items-stretch formRoot" onSubmit={(e) => handleSubmit(e)}>
+      <form className="flex flex-col items-stretch formRoot" onSubmit={(e) => handleSubmit(e)} onChange={detectEdition}>
         <fieldset className={formFieldset}>
           <legend className={formLegend}><Fingerprint/>IDENTITY</legend>
           <label className={formLabel} htmlFor="fullNameInput">Full Name</label>
@@ -527,7 +543,13 @@ export default function TravelForm({dispatch, ScrollToDocumentSmoothly, ScrollTo
         </fieldset>
 
         <div className='flex flex-row fixed bottom-5 right-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>
-          <button className={formButton} id="submitForm" type="submit" onClick={ScrollToDocumentSmoothly}>GENERATE <FileText /></button>
+          {editing && <button className={formButton} id="submitForm" type="submit" onClick={ScrollToDocumentSmoothly}>GENERATE <FileText /></button>}
+          {!editing && 
+            <PDFDownloadLink document={<MyDocument state={state}/>} fileName={`EPA-${state.thisIsOurDate}.pdf`}>
+              {({ loading }) =>
+                  loading ? <NavButton disabled>Generating document...</NavButton> : <NavButton active>DOWNLOAD <Download /></NavButton>
+              }
+            </PDFDownloadLink>}
           <button className="text-gray-300 bg-red-500 hover:bg-red-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2" id="resetForm" onClick={resetForm}><Trash2 /></button>
         </div>
       </form>

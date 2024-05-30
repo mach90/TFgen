@@ -1,14 +1,11 @@
-import { useEffect, useReducer, useState } from "react";
-import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import { useEffect, useReducer } from "react";
+import { PDFViewer } from '@react-pdf/renderer';
 import MyDocument from '../components/MyDocument';
 import TravelForm from '../components/TravelForm';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
-import { ArrowUpFromDot } from 'lucide-react';
-import NavButton from "../components/NavButton";
-import { FileText } from 'lucide-react';
-
+import ControlArrowUp from "../components/ControlArrowUp";
 
 // Initial State of the form
 const initialState = {
@@ -131,9 +128,6 @@ function reducer(state, action) {
 }
 
 export default function TravelFormGenerator() {
-    // STATE Controls buttons visibility
-    const [controlsVisibility, setControlsVisibility] = useState(false);
-
     // useReducer for the form
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -165,25 +159,7 @@ export default function TravelFormGenerator() {
         ScrollToTop();
     }, []);
 
-    // Effect scroll trigger set Controls buttons visibility true/false
-    useEffect(() => {
-        const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        if (scrollPosition >= 400) {
-            setControlsVisibility(true);
-        } else {
-            setControlsVisibility(false);
-        }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-        window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    // Before unload ask for confirmation to leave the page
+    // Before unload ask for confirmation to leave or refresh the page manually
     useEffect(() => {
         const handleBeforeUnload = (e) => {
             const confirmationMessage = 'Form will be lost. Are you sure you want to leave?';
@@ -204,21 +180,14 @@ export default function TravelFormGenerator() {
         <div className="bg-dark3 min-h-screen flex flex-col justify-between">
             <Header/>
             <Container>
-                <TravelForm dispatch={dispatch} ScrollToDocumentSmoothly={ScrollToDocumentSmoothly} ScrollToTopSmoothly={ScrollToTopSmoothly} />
+                <TravelForm state={state} dispatch={dispatch} ScrollToDocumentSmoothly={ScrollToDocumentSmoothly} ScrollToTopSmoothly={ScrollToTopSmoothly} />
             </Container>
             <Container containerID={'documentViewerGenerated'}>
-                <PDFDownloadLink document={<MyDocument state={state}/>} fileName={`epa-${state.fullName}-${state.thisIsOurDate}.pdf`}>
-                    {({ loading }) =>
-                        loading ? <NavButton disabled>Generating document...</NavButton> : <NavButton active>Download <FileText /></NavButton>
-                    }
-                </PDFDownloadLink>
                 <PDFViewer className="w-[100%] h-screen" showToolbar={true}>
                     <MyDocument state={state} />
                 </PDFViewer>
             </Container>
-            {controlsVisibility && <div className='flex flex-row fixed bottom-5 left-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>
-            <button className="text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2" onClick={ScrollToTopSmoothly}><ArrowUpFromDot /></button>
-            </div>}
+            <ControlArrowUp ScrollToTopSmoothly={ScrollToTopSmoothly}/>
             <Footer/>
         </div>
     )
