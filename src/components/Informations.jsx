@@ -2,7 +2,7 @@ import Container from "./Container";
 import { InformationCircleIcon, HandThumbUpIcon, ClockIcon, IdentificationIcon } from '@heroicons/react/20/solid';
 import NavButton from "./NavButton";
 import { NavLink } from "react-router-dom";
-import AppScreenshot from "../img/epascreenshot.jpg";
+import AppScreenshot from "../img/descriptionimg1.jpg";
 
 const features = [
   {
