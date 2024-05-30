@@ -626,6 +626,18 @@ video {
   margin-top: 1.5rem;
 }
 
+.mt-96 {
+  margin-top: 24rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -1090,11 +1102,6 @@ video {
 }
 
 @media (min-width: 976px) {
-  .lg\:mx-\[8vw\] {
-    margin-left: 8vw;
-    margin-right: 8vw;
-  }
-
   .lg\:mx-\[6vw\] {
     margin-left: 6vw;
     margin-right: 6vw;
@@ -1116,26 +1123,6 @@ video {
 }
 
 @media (min-width: 1440px) {
-  .xl\:mx-\[10vw\] {
-    margin-left: 10vw;
-    margin-right: 10vw;
-  }
-
-  .xl\:mx-\[2vw\] {
-    margin-left: 2vw;
-    margin-right: 2vw;
-  }
-
-  .xl\:mx-\[4vw\] {
-    margin-left: 4vw;
-    margin-right: 4vw;
-  }
-
-  .xl\:mx-\[8vw\] {
-    margin-left: 8vw;
-    margin-right: 8vw;
-  }
-
   .xl\:mx-\[12vw\] {
     margin-left: 12vw;
     margin-right: 12vw;
@@ -1143,11 +1130,6 @@ video {
 
   .xl\:w-\[60\%\] {
     width: 60%;
-  }
-
-  .xl\:px-\[15vw\] {
-    padding-left: 15vw;
-    padding-right: 15vw;
   }
 
   .xl\:px-\[12vw\] {
