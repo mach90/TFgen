@@ -207,7 +207,7 @@ export default function TravelFormGenerator() {
                 <TravelForm dispatch={dispatch} ScrollToDocumentSmoothly={ScrollToDocumentSmoothly} ScrollToTopSmoothly={ScrollToTopSmoothly} />
             </Container>
             <Container containerID={'documentViewerGenerated'}>
-                <PDFDownloadLink document={<MyDocument state={state}/>} fileName="somename.pdf">
+                <PDFDownloadLink document={<MyDocument state={state}/>} fileName={`epa-${state.fullName}-${state.thisIsOurDate}.pdf`}>
                     {({ loading }) =>
                         loading ? <NavButton disabled>Generating document...</NavButton> : <NavButton active>Download <FileText /></NavButton>
                     }
