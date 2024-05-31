@@ -1,4 +1,4 @@
-# EPAgen
+# TFgen
 
 ## What is it ?
 This app uses [React-PDF](https://react-pdf.org/) to generate a pdf document from a form.
