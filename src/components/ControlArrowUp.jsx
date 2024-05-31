@@ -1,19 +1,30 @@
+/* //////////////////////////////////////////////////
+IMPORTS
+////////////////////////////////////////////////// */
 import { useEffect, useState } from 'react';
 import { ArrowUpFromDot } from 'lucide-react';
+import NavButton from './NavButton';
 
-function ControlArrowUp({ScrollToTopSmoothly}) {
-    // STATE Controls buttons visibility
+/* //////////////////////////////////////////////////
+ARROW SCOLL UP TO TOP COMPONENT
+////////////////////////////////////////////////// */
+function ControlArrowUp({ScrollTo}) {
+    /* //////////////////////////////////////////////////
+    STATE Controls buttons visibility
+    ////////////////////////////////////////////////// */
     const [controlsVisibility, setControlsVisibility] = useState(false);
 
-    // Effect scroll trigger set Controls buttons visibility true/false
+    /* //////////////////////////////////////////////////
+    useEffect scroll trigger set Controls buttons visibility true/false
+    ////////////////////////////////////////////////// */
     useEffect(() => {
         const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        if (scrollPosition >= 400) {
-            setControlsVisibility(true);
-        } else {
-            setControlsVisibility(false);
-        }
+            const scrollPosition = window.scrollY;
+            if (scrollPosition >= 400) {
+                setControlsVisibility(true);
+            } else {
+                setControlsVisibility(false);
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -23,10 +34,19 @@ function ControlArrowUp({ScrollToTopSmoothly}) {
         };
     }, []);
 
+    /* //////////////////////////////////////////////////
+    TAILWIND CSS CLASSES
+    ////////////////////////////////////////////////// */
+    const buttonBackground = "flex flex-row fixed bottom-5 left-5 gap-4 items-center justify-end w-auto bg-darkControlsBackground p-2 rounded-md";
+    // const buttonStyle = "text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
+
+    /* //////////////////////////////////////////////////
+    JSX
+    ////////////////////////////////////////////////// */
     return (
         <>
-            {controlsVisibility && <div className='flex flex-row fixed bottom-5 left-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>
-                <button className="text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2" onClick={ScrollToTopSmoothly}><ArrowUpFromDot /></button>
+            {controlsVisibility && <div className={buttonBackground}>
+                <NavButton buttonStyle='arrow' onClick={() => ScrollTo('top', 'smooth')}><ArrowUpFromDot /></NavButton>
             </div>}
         </>
     );

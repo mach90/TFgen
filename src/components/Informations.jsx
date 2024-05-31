@@ -1,10 +1,16 @@
+/* //////////////////////////////////////////////////
+IMPORTS
+////////////////////////////////////////////////// */
 import Container from "./Container";
-import { InformationCircleIcon, HandThumbUpIcon, ClockIcon, IdentificationIcon } from '@heroicons/react/20/solid';
 import NavButton from "./NavButton";
 import { NavLink } from "react-router-dom";
+import { InformationCircleIcon, HandThumbUpIcon, ClockIcon, IdentificationIcon } from '@heroicons/react/20/solid';
 import AppScreenshot from "../img/descriptionimg1.jpg";
 
-const features = [
+/* //////////////////////////////////////////////////
+Object containing infos
+////////////////////////////////////////////////// */
+const infos = [
   {
     name: 'What is it ?',
     description:
@@ -28,17 +34,20 @@ const features = [
   },
 ]
 
+/* //////////////////////////////////////////////////
+INFORMATIONS COMPONENT
+////////////////////////////////////////////////// */
 export default function Informations() {
     return (
         <Container>
-          <div className="bg-dark1 p-4 rounded-md w-[100%] flex flex-col justify-center items-center">
-              <h2 className="text-base font-semibold text-medium1 mt-12">EPA stands for</h2>
-              <p className="mt-2 text-3xl font-bold text-gray-300 md:text-4xl">Emergency Plan of Action</p>
+          <div className="bg-darkCard p-4 rounded-md w-[100%] flex flex-col justify-center items-center">
+              <p className="text-base font-semibold text-darkP mt-12">EPA stands for</p>
+              <h1 className="mt-2 text-3xl font-bold text-darkH1 md:text-4xl">Emergency Plan of Action</h1>
               <img className="mt-12 hidden md:block w-[80%] sm:w-[75%] md:w-[70%] lg:w-[65%] xl:w-[60%]  rounded-xl" src={AppScreenshot} alt="App screenshot"/>
               <dl className="mt-10 space-y-8 text-base leading-7 text-gray-400 w-[70%] text-justify">
-                {features.map((feature) => (
+                {infos.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-bright1">
+                    <dt className="inline font-semibold text-orangeAccent">
                     <feature.icon className="absolute left-1 top-1 h-5 w-5 text-medium1" aria-hidden="true" />
                     {feature.name}
                     </dt>{' '}
@@ -48,7 +57,7 @@ export default function Informations() {
               </dl>
             <div className="flex my-12 justify-center">
               <NavLink to="travelformgenerator" className="flex gap-2">
-                <NavButton active>
+                <NavButton buttonStyle="active">
                   Create your EPA now.
                 </NavButton>
               </NavLink>

@@ -1,13 +1,18 @@
+/* //////////////////////////////////////////////////
+IMPORTS
+////////////////////////////////////////////////// */
 import { useEffect, useReducer } from "react";
 import { PDFViewer } from '@react-pdf/renderer';
-import MyDocument from '../components/MyDocument';
-import TravelForm from '../components/TravelForm';
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Container from "../components/Container";
+import TravelForm from '../components/TravelForm';
+import MyDocument from '../components/MyDocument';
+import Footer from "../components/Footer";
 import ControlArrowUp from "../components/ControlArrowUp";
 
-// Initial State of the form
+/* //////////////////////////////////////////////////
+FORM INITIAL STATE
+////////////////////////////////////////////////// */ 
 const initialState = {
     fullName: "",
     sexe: "",
@@ -64,7 +69,9 @@ const initialState = {
     thisIsOurDate: "",
 }
 
-// Reducer for the form
+/* //////////////////////////////////////////////////
+FORM REDUCER
+////////////////////////////////////////////////// */ 
 function reducer(state, action) {
     switch(action.type) {
         case "formSubmitted": return {
@@ -127,45 +134,80 @@ function reducer(state, action) {
     }
 }
 
+/* //////////////////////////////////////////////////
+TRAVEL FORM GENERATOR PAGE COMPONENT
+////////////////////////////////////////////////// */
 export default function TravelFormGenerator() {
-    // useReducer for the form
+    /* //////////////////////////////////////////////////
+    FORM useReducer
+    ////////////////////////////////////////////////// */
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    // Scroll quickly to the top of the page
-    function ScrollToTop(){
-        window.scrollTo({
-            top: 0,
-        });
+    /* //////////////////////////////////////////////////
+    Function to scroll to top or an id
+    ////////////////////////////////////////////////// */
+    function ScrollTo(where, behavior = 'auto'){
+        /* TOP */
+        if(where === 'top') {
+            window.scrollTo({
+                top: 0,
+                behavior: behavior,
+            });
+        }
+
+        /* ID */
+        if(where !== 'top' && where) {
+            const whereToScroll = document.getElementById(where);
+            if (whereToScroll) {
+              whereToScroll.scrollIntoView({ behavior: behavior, block: 'start' }); // Adjusted block to 'start' for better alignment
+            } 
+        }
     }
 
-    // Scroll smoothly to the id of the PDV viewer
-    function ScrollToDocumentSmoothly() {
-        const documentViewerGenerated = document.getElementById('documentViewerGenerated');
-        if (documentViewerGenerated) {
-          documentViewerGenerated.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Adjusted block to 'start' for better alignment
-        }
-      }
+    /* //////////////////////////////////////////////////
+    Function to scroll quickly to top or to an element
+    ////////////////////////////////////////////////// */
+    // function ScrollToTop(){
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'auto',
+    //     });
+    // }
+
+    /* //////////////////////////////////////////////////
+    Function to scroll smoothly to top or to an element
+    ////////////////////////////////////////////////// */
+    // function ScrollToDocumentSmoothly() {
+    //     const documentViewerGenerated = document.getElementById('documentViewerGenerated');
+    //     if (documentViewerGenerated) {
+    //       documentViewerGenerated.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Adjusted block to 'start' for better alignment
+    //     }
+    //   }
     
     // Scroll smoothly to the top of the page
-    function ScrollToTopSmoothly(){
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    }
+    // function ScrollToTopSmoothly(){
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth',
+    //     });
+    // }
 
-    // When the page is mounted, the view scroll to top
+    /* //////////////////////////////////////////////////
+    useEffect scroll to top at component mount
+    ////////////////////////////////////////////////// */
     useEffect(() => {
-        ScrollToTop();
+        ScrollTo('top');
     }, []);
 
-    // Before unload ask for confirmation to leave or refresh the page manually
+    /* //////////////////////////////////////////////////
+    useEffect to detect page refresh or leave and ask user for a confirmation
+    ////////////////////////////////////////////////// */
     useEffect(() => {
         const handleBeforeUnload = (e) => {
             const confirmationMessage = 'Form will be lost. Are you sure you want to leave?';
-            e.preventDefault(); // Most browsers still require this for a custom dialog
-            e.returnValue = confirmationMessage; // This custom message will not be shown in most modern browsers
-            return confirmationMessage; // This is necessary for older browsers
+            e.preventDefault();
+            e.returnValue = confirmationMessage;
+            return confirmationMessage;
         };
 
         window.addEventListener('beforeunload', handleBeforeUnload);
@@ -175,19 +217,21 @@ export default function TravelFormGenerator() {
         };
     }, []);
 
-    // JSX
+    /* //////////////////////////////////////////////////
+    JSX
+    ////////////////////////////////////////////////// */
     return (
-        <div className="bg-dark3 min-h-screen flex flex-col justify-between">
+        <div className="bg-darkBackground min-h-screen flex flex-col justify-between">
             <Header/>
             <Container>
-                <TravelForm state={state} dispatch={dispatch} ScrollToDocumentSmoothly={ScrollToDocumentSmoothly} ScrollToTopSmoothly={ScrollToTopSmoothly} />
+                <TravelForm state={state} dispatch={dispatch} ScrollTo={ScrollTo}  />
             </Container>
-            <Container containerID={'documentViewerGenerated'}>
+            <Container containerID={'pdfviewer'}>
                 <PDFViewer className="w-[100%] h-screen" showToolbar={true}>
                     <MyDocument state={state} />
                 </PDFViewer>
             </Container>
-            <ControlArrowUp ScrollToTopSmoothly={ScrollToTopSmoothly}/>
+            <ControlArrowUp ScrollTo={ScrollTo}/>
             <Footer/>
         </div>
     )

@@ -1,21 +1,41 @@
-import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2, CalendarClock, Download} from 'lucide-react';
+/* //////////////////////////////////////////////////
+IMPORTS
+////////////////////////////////////////////////// */
 import { useState } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import NavButton from './NavButton';
 import MyDocument from './MyDocument';
+import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2, CalendarClock, Download} from 'lucide-react';
 
-export default function TravelForm({state, dispatch, ScrollToDocumentSmoothly, ScrollToTopSmoothly}) {
-  // TailwindCSS classes for form elements
-  const formFieldset = "bg-dark1 px-4 py-6 rounded-md text-sm font-semibold flex flex-col gap-1 my-8 shadow-lg shadow-gray-950/50";
-  const formLegend = "text-teal-600 bg-dark1 px-4 py-2 rounded-lg flex gap-2 items-center";
+/* //////////////////////////////////////////////////
+TRAVEL FORM COMPONENT
+////////////////////////////////////////////////// */
+export default function TravelForm({state, dispatch, ScrollTo}) {
+  /* //////////////////////////////////////////////////
+  TailwindCSS classes for form elements
+  ////////////////////////////////////////////////// */
+  const form = "flex flex-col items-stretch formRoot";
+  const formIntro = "text-orangeAccent text-center bg-darkBackground p-4 mb-10 rounded-md border border-orangeAccent";
+  const formFieldset = "bg-darkCard px-4 py-6 rounded-md text-sm font-semibold flex flex-col gap-1 my-8 shadow-lg shadow-gray-950/50";
+  const formLegend = "text-teal-600 bg-darkCard px-4 py-2 rounded-lg flex gap-2 items-center";
   const formLabel = "text-gray-500 text-start";
-  const formInput = "bg-dark3 text-bright1 p-2";
-  const formSelect = "bg-dark3 text-bright1 p-2";
-  const formButton = "text-gray-300 bg-teal-800 hover:bg-teal-600 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
+  const formInput = "bg-darkBackground text-orangeAccent p-2";
+  const formSelect = "bg-darkBackground text-orangeAccent p-2";
+  const formControls = "flex flex-row fixed bottom-5 right-5 gap-4 items-center justify-end w-auto bg-darkControlsBackground p-2 rounded-md";
+  const formButtonGenerate = "text-gray-300 bg-teal-800 hover:bg-teal-600 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
 
+  /* //////////////////////////////////////////////////
+  Form change/edition detection
+  ////////////////////////////////////////////////// */
   const [editing, setEditing] = useState(true);
 
-  // Submit form
+  function detectEdition(){
+    if(editing === false) setEditing(true);
+  }
+
+  /* //////////////////////////////////////////////////
+  Function to SUBMIT FORM
+  ////////////////////////////////////////////////// */
   function handleSubmit(e) {
     e.preventDefault();
     // PAYLOAD
@@ -74,14 +94,17 @@ export default function TravelForm({state, dispatch, ScrollToDocumentSmoothly, S
       attachmentsPayload: e.target.attachmentsInput.value,
       thisIsOurDatePayload: new Date(Date.now()).toISOString(),
     }
-    // DISPATCH
+    // DISPATCH ACTION
     dispatch({type: "formSubmitted", payload: formPayload});
     // EDITING STATE CHANGE
     setEditing(false);
   }
 
-  // Reset form
+  /* //////////////////////////////////////////////////
+  Function to RESET FORM
+  ////////////////////////////////////////////////// */
   function resetForm(e){
+    // FORM ROOT
     const formRoot = e.target.closest('.formRoot');
     e.preventDefault();
     // PAYLOAD
@@ -140,7 +163,7 @@ export default function TravelForm({state, dispatch, ScrollToDocumentSmoothly, S
       attachmentsPayload: "",
       thisIsOurDatePayload: "",
     }
-    // DISPATCH
+    // DISPATCH ACTION
     dispatch({type: "formSubmitted", payload: resetPayload});
     // FORM INPUT RESET
     formRoot.fullNameInput.value = "";
@@ -199,25 +222,22 @@ export default function TravelForm({state, dispatch, ScrollToDocumentSmoothly, S
     setEditing(true);
 
     // SCROLL
-    ScrollToTopSmoothly();
-  }
-  
-  // Detect form edition
-  function detectEdition(){
-    if(editing === false) setEditing(true);
+    ScrollTo('top', 'smooth');
   }
 
-  // JSX
+  /* //////////////////////////////////////////////////
+  JSX
+  ////////////////////////////////////////////////// */
   return (
     <div className='gap-4 w-[100%]'>
-      <div className="text-bright1 text-center bg-dark3 p-4 mb-10 rounded-md border border-bright1">
+      <div className={formIntro}>
         <p><strong>This app does not collect or store any informations.</strong></p>
         <p>PDF document is not processed or saved anywhere except in your browser and computer.</p>
         <p><strong>Share copies to trusted contacts only.</strong></p>
         <p><strong>Keep one copy with you, secured.</strong></p>
       </div>
 
-      <form className="flex flex-col items-stretch formRoot" onSubmit={(e) => handleSubmit(e)} onChange={detectEdition}>
+      <form className={form} onSubmit={(e) => handleSubmit(e)} onChange={detectEdition}>
         <fieldset className={formFieldset}>
           <legend className={formLegend}><Fingerprint/>IDENTITY</legend>
           <label className={formLabel} htmlFor="fullNameInput">Full Name</label>
@@ -542,15 +562,15 @@ export default function TravelForm({state, dispatch, ScrollToDocumentSmoothly, S
           <textarea className={formInput} id="attachmentsInput" type="text" placeholder="(ie. Map, detailed planning etc.)"></textarea>
         </fieldset>
 
-        <div className='flex flex-row fixed bottom-5 right-5 gap-4 items-center justify-end w-auto bg-gray-700 p-2 rounded-md'>
-          {editing && <button className={formButton} id="submitForm" type="submit" onClick={ScrollToDocumentSmoothly}>GENERATE <FileText /></button>}
+        <div className={formControls}>
+          {editing && <button className={formButtonGenerate} id="submitForm" type="submit" onClick={() => ScrollTo('pdfviewer', 'smooth')}>GENERATE <FileText /></button>}
           {!editing && 
             <PDFDownloadLink document={<MyDocument state={state}/>} fileName={`EPA-${state.thisIsOurDate}.pdf`}>
               {({ loading }) =>
-                  loading ? <NavButton disabled>Generating document...</NavButton> : <NavButton active>DOWNLOAD <Download /></NavButton>
+                  loading ? <NavButton buttonStyle='disabled'>Generating document...</NavButton> : <NavButton buttonStyle='active'>DOWNLOAD <Download /></NavButton>
               }
             </PDFDownloadLink>}
-          <button className="text-gray-300 bg-red-500 hover:bg-red-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2" id="resetForm" onClick={resetForm}><Trash2 /></button>
+          <NavButton buttonStyle='reset' id="resetForm" onClick={resetForm}><Trash2 /></NavButton>
         </div>
       </form>
     </div>
