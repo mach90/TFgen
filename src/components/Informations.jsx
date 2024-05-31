@@ -14,7 +14,7 @@ const infos = [
   {
     name: 'What is it ?',
     description:
-      "An Emergency Plan of Action is a document storing informations about you and your travel plan. It's shared with family, friends, and relevant services to aid in potential emergencies.",
+      "A Travel Form is a document storing informations about you and your travel plan. It's shared with family, friends, and relevant services to aid in potential emergencies.",
     icon: InformationCircleIcon,
   },
   {
@@ -58,7 +58,7 @@ export default function Informations() {
             <div className="flex my-12 justify-center">
               <NavLink to="travelformgenerator" className="flex gap-2">
                 <NavButton buttonStyle="active">
-                  Create your EPA now.
+                  Create your Travel Form now.
                 </NavButton>
               </NavLink>
             </div>

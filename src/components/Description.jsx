@@ -37,7 +37,7 @@ export default function Description() {
             <div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-darkH1">
                     <span ref={el} className="text-orangeAccent"/>
-                    <p>Your Emergency Plan of Action.</p>
+                    <p>Your Travel Form.</p>
                 </h1>
                 <p className="mt-6 text-sm sm:text-lg md:text-2xl leading-8 text-darkP">
                     Let people know where you go. This can save your life.
