@@ -14,7 +14,7 @@ const infos = [
   {
     name: 'What is it ?',
     description:
-      "A Travel Form is a document storing informations about you and your travel plan. It's shared with family, friends, and relevant services to aid in potential emergencies.",
+      "It is a document storing informations about you and your travel plan. It's shared with family, friends, and relevant services to aid in potential emergencies.",
     icon: InformationCircleIcon,
   },
   {
@@ -41,8 +41,8 @@ export default function Informations() {
     return (
         <Container>
           <div className="bg-darkCard p-4 rounded-md w-[100%] flex flex-col justify-center items-center">
-              <p className="text-base font-semibold text-darkP mt-12">EPA stands for</p>
-              <h1 className="mt-2 text-3xl font-bold text-darkH1 md:text-4xl">Emergency Plan of Action</h1>
+              {/* <p className="text-base font-semibold text-darkP mt-12">TF stands for</p> */}
+              <h1 className="mt-2 text-3xl font-bold text-darkH1 md:text-4xl">Travel Form</h1>
               <img className="mt-12 hidden md:block w-[80%] sm:w-[75%] md:w-[70%] lg:w-[65%] xl:w-[60%]  rounded-xl" src={AppScreenshot} alt="App screenshot"/>
               <dl className="mt-10 space-y-8 text-base leading-7 text-gray-400 w-[70%] text-justify">
                 {infos.map((feature) => (
