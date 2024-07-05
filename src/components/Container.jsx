@@ -3,7 +3,7 @@ CONTAINER COMPONENT
 ////////////////////////////////////////////////// */
 export default function Container({children, containerID}) {
     return (
-        <div id={containerID} className="my-4 mx-[2vw] py-16 px-4 md:mx-[4vw] lg:mx-[6vw] xl:mx-[12vw] items-center justify-center gap-2 text-center flex flex-col">
+        <div id={containerID} className="bg-color1 text-textColor1 flex flex-col justify-between shadow-lg min-h-screen bg-[url('/src/img/background.jpg')] bg-fixed">
             {children}
         </div>
     );

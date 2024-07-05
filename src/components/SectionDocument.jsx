@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 PDF DOCUMENT COMPONENT
 This is the PDF Form that will be created
 ////////////////////////////////////////////////// */
-export default function MyDocument ({state}) {
+export default function SectionDocument ({state}) {
   /* //////////////////////////////////////////////////
   STATE VARIABLES
   ////////////////////////////////////////////////// */

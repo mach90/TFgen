@@ -9,7 +9,7 @@ NAVBAR COMPONENT
 ////////////////////////////////////////////////// */
 export default function NavBar() {
     return (
-        <div className='flex flex-col justify-center items-center py-2 px-8 gap-y-4 rounded-md  md:flex-row md:justify-between'>
+        <div className='flex flex-row justify-between bg-colorBackground px-20 py-4 border-b border-color2 sticky top-0 z-10 shadow-2xl shadow-gray-950'>
             <NavLogo />
             <NavMenu />
         </div>

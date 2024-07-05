@@ -3,7 +3,7 @@ IMPORTS
 ////////////////////////////////////////////////// */
 import { useEffect, useState } from 'react';
 import { ArrowUpFromDot } from 'lucide-react';
-import NavButton from './NavButton';
+import NavButton from './Button';
 
 /* //////////////////////////////////////////////////
 ARROW SCOLL UP TO TOP COMPONENT
@@ -37,7 +37,7 @@ function ControlArrowUp({ScrollTo}) {
     /* //////////////////////////////////////////////////
     TAILWIND CSS CLASSES
     ////////////////////////////////////////////////// */
-    const buttonBackground = "flex flex-row fixed bottom-5 left-5 gap-4 items-center justify-end w-auto bg-darkControlsBackground p-2 rounded-md";
+    const buttonBackground = "flex flex-row fixed bottom-20 left-5 gap-4 items-center justify-end w-auto bg-darkControlsBackground p-2 rounded-md";
     // const buttonStyle = "text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
 
     /* //////////////////////////////////////////////////

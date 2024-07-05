@@ -2,9 +2,11 @@
 IMPORTS
 ////////////////////////////////////////////////// */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import TravelFormGenerator from "./pages/TravelFormGenerator";
-import PageNotFound from "./pages/PageNotFound";
+import PageHome from "./pages/PageHome";
+import PageAbout from "./pages/PageAbout";
+import PagePrivacy from "./pages/PagePrivacy";
+import PageForm from "./pages/PageForm";
+import Page404 from "./pages/Page404";
 
 /* //////////////////////////////////////////////////
 APP COMPONENT with Routes
@@ -13,9 +15,11 @@ export default function App(){
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/travelformgenerator" element={<TravelFormGenerator />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="/" element={<PageHome />} />
+        <Route path="/about" element={<PageAbout />} />
+        <Route path="/privacy" element={<PagePrivacy />} />
+        <Route path="/form" element={<PageForm />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>
   )
