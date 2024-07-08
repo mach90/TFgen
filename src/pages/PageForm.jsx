@@ -69,20 +69,20 @@ export default function PageForm() {
     /* //////////////////////////////////////////////////
     useEffect to detect page refresh or leave and ask user for a confirmation
     ////////////////////////////////////////////////// */
-    useEffect(() => {
-        const handleBeforeUnload = (e) => {
-            const confirmationMessage = 'Form will be lost. Are you sure you want to leave?';
-            e.preventDefault();
-            e.returnValue = confirmationMessage;
-            return confirmationMessage;
-        };
+    // useEffect(() => {
+    //     const handleBeforeUnload = (e) => {
+    //         const confirmationMessage = 'Form will be lost. Are you sure you want to leave?';
+    //         e.preventDefault();
+    //         e.returnValue = confirmationMessage;
+    //         return confirmationMessage;
+    //     };
 
-        window.addEventListener('beforeunload', handleBeforeUnload);
+    //     window.addEventListener('beforeunload', handleBeforeUnload);
 
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('beforeunload', handleBeforeUnload);
+    //     };
+    // }, []);
 
     /* //////////////////////////////////////////////////
     JSX

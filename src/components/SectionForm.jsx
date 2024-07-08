@@ -17,7 +17,7 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
   TailwindCSS classes for form elements
   ////////////////////////////////////////////////// */
   const formSectionStyle = "flex flex-row py-12 px-4 sm:px-6 gap-12 justify-center h-full"
-  const menuStyle = "bg-red-600 flex flex-col gap-2 bg-colorBackground bg-opacity-60 py-4 px-8 border border-textColor1 rounded-md h-max justify-center sticky top-32 hidden md:block";
+  const menuStyle = "flex flex-col gap-2 bg-colorBackground bg-opacity-60 py-4 px-8 border border-textColor1 rounded-md h-max justify-center sticky top-32 hidden md:block";
   const menuButtonStyle = "flex flex-row gap-2 text-textColor1 hover:text-colorTextLight items-center text-sm font-medium py-1";
   const menuButtonLabelStyle = "hidden lg:block";
   const menuIconSize = 32;

@@ -6,7 +6,7 @@ The document generated is a Travel Form to be shared with trusted individuals in
 
 ## To do
 - [x] Redesign
-- [ ] Responsive
-- [ ] Form validation
+- [x] Responsive
+- [?] Form validation
 - [ ] Change page/Refresh page/Reset form... confirmations
 - [ ] Sharing generated pdf
