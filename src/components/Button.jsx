@@ -5,7 +5,7 @@ export default function Button({children, buttonStyle = 'default', onClick, onMo
     const buttonStyleDisabled = "text-gray-300 bg-gray-700 hover:bg-gray-600 hover:text-white rounded-md px-3 py-2 text-sm flex gap-2";
     const buttonStyleMain = "text-stone-100 bg-black hover:bg-black hover:text-white rounded-md px-3 py-2 text-sm flex gap-2";
     const buttonStyleBounce = "text-gray-300 bg-teal-800 hover:bg-teal-600 hover:text-white flex rounded-md px-3 py-2 text-sm hover:animate-bounce gap-2";
-    const buttonStyleArrow = "text-textColor2 bg-color2 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-sm flex flex-row gap-2";
+    const buttonStyleArrow = "text-textColor2 hover:text-colorTextLight font-bold bg-textColor1 rounded-md px-3 py-2 text-sm flex gap-2";
     const buttonStyleReset = "text-textColor2 hover:text-colorTextLight font-bold bg-color4 rounded-md px-3 py-2 text-sm flex flex-row gap-2";
     const buttonStyleDownload = "text-textColor2 hover:text-colorTextLight font-bold bg-green-600 rounded-md px-3 py-2 text-sm flex flex-row items-center gap-2";
 

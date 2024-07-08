@@ -16,8 +16,20 @@ export default function LabelInfos({icon, infos}) {
         <div className="relative">
             {icon === "info" && <CircleHelp size={14} className="text-color3" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>}
             {icon === "important" && <TriangleAlert size={14} className="text-color4" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>}
-            {infosVisible && icon === "info" && <p className="absolute top-6 min-w-min w-96 bg-color1 text-color3 p-4 rounded-md border border-color3 z-20">{infos}</p>}
-            {infosVisible && icon === "important" && <p className="absolute top-6 min-w-min w-96 bg-color1 text-color4 p-4 rounded-md border border-color4 z-20">{infos}</p>}
+            {infosVisible && icon === "info" && (
+  <div className="fixed inset-x-0 top-40 mx-auto max-w-sm w-full p-4 z-20">
+    <p className="bg-color1 text-color3 p-4 rounded-md border border-color3">
+      {infos}
+    </p>
+  </div>
+)}
+{infosVisible && icon === "important" && (
+  <div className="fixed inset-x-0 top-40 mx-auto max-w-md w-full p-4 z-20">
+    <p className="bg-color1 text-color4 p-4 rounded-md border border-color4">
+      {infos}
+    </p>
+  </div>
+)}
         </div>
     );
 }

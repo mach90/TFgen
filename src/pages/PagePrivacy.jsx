@@ -12,7 +12,7 @@ PRIVACY PAGE COMPONENT
 export default function PagePrivacy() {
     return (
             <Container containerID="about">
-                <NavBar/>
+                <NavBar />
                 <SectionPrivacy />
                 <FooterBar/> 
             </Container>

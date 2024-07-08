@@ -37,7 +37,7 @@ function ControlArrowUp({ScrollTo}) {
     /* //////////////////////////////////////////////////
     TAILWIND CSS CLASSES
     ////////////////////////////////////////////////// */
-    const buttonBackground = "flex flex-row fixed bottom-20 left-5 gap-4 items-center justify-end w-auto bg-darkControlsBackground p-2 rounded-md";
+    const buttonBackground = "flex flex-row fixed bottom-20 left-5 gap-4 items-center justify-end w-auto bg-darkControlsBackground rounded-md z-20";
     // const buttonStyle = "text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
 
     /* //////////////////////////////////////////////////

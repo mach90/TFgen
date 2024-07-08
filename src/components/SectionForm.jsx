@@ -16,11 +16,12 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
   /* //////////////////////////////////////////////////
   TailwindCSS classes for form elements
   ////////////////////////////////////////////////// */
-  const formSectionStyle = "flex flex-row px-96 py-12 gap-24 justify-start h-full"
-  const menuStyle = "flex flex-col gap-2 bg-colorBackground bg-opacity-60 py-4 px-8 border border-textColor1 rounded-md h-max justify-center sticky top-32";
-  const menuButtonStyle = "flex flex-row gap-2 text-textColor1 hover:text-colorTextLight items-center text-sm font-medium";
+  const formSectionStyle = "flex flex-row py-12 px-4 sm:px-6 gap-12 justify-center h-full"
+  const menuStyle = "bg-red-600 flex flex-col gap-2 bg-colorBackground bg-opacity-60 py-4 px-8 border border-textColor1 rounded-md h-max justify-center sticky top-32 hidden md:block";
+  const menuButtonStyle = "flex flex-row gap-2 text-textColor1 hover:text-colorTextLight items-center text-sm font-medium py-1";
+  const menuButtonLabelStyle = "hidden lg:block";
   const menuIconSize = 32;
-  const form = "flex flex-col gap-12 w-full h-max formRoot";
+  const form = "flex flex-col gap-12 w-full h-max formRoot max-w-[800px]";
   const formIntro = "relative flex flex-col gap-4 w-full h-max bg-colorBackground bg-opacity-60 border border-color3 text-color3 text-sm p-12 rounded-md";
   const formFieldset = "relative flex flex-col gap-2 bg-colorBackground bg-opacity-60 border border-textColor1 rounded-md p-12";
   const fieldsetDescription = "text-textColor1 mb-8 italic text-lg text-right";
@@ -28,7 +29,7 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
   const formLabel = "font-semibold text-textColor1 flex flex-row gap-2 items-center w-full mt-2";
   const formInput = "bg-color1 border border-textColor1 text-color2 p-1";
   const formSelect = "bg-color1 border border-textColor1 text-color2 p-1";
-  const formControls = "flex flex-row gap-4 items-center fixed bottom-20 right-5";
+  const formControls = "flex flex-row gap-4 items-center fixed bottom-20 right-5 z-20";
   const formButtonGenerate = "text-textColor2 hover:text-colorTextLight font-bold bg-color3 rounded-md px-3 py-2 text-sm flex gap-2";
 
   /* //////////////////////////////////////////////////
@@ -239,21 +240,21 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
     <div className={formSectionStyle}>
 
       <div className={menuStyle}>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset1', 'smooth', 'center')}><Fingerprint size={menuIconSize}/> IDENTITY</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset2', 'smooth', 'center')}><CalendarClock size={menuIconSize}/> DATES</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset3', 'smooth', 'center')}><PersonStanding size={menuIconSize}/> APPEARANCE</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset4', 'smooth', 'center')}><ClipboardPlus size={menuIconSize}/> MEDICAL</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset5', 'smooth', 'center')}><Car size={menuIconSize}/> VEHICLES</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset6', 'smooth', 'center')}><RadioTower size={menuIconSize}/> COMMUNICATION</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset7', 'smooth', 'center')}><Bed size={menuIconSize}/> STAYING</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset8', 'smooth', 'center')}><BookUser size={menuIconSize}/> CONTACTS</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset9', 'smooth', 'center')}><Drama size={menuIconSize}/> PERSONALITY</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset10', 'smooth', 'center')}><CandlestickChart size={menuIconSize}/> SKILLS</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset11', 'smooth', 'center')}><Users size={menuIconSize}/> GROUP</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset12', 'smooth', 'center')}><Route size={menuIconSize}/> TRIP</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset13', 'smooth', 'center')}><RouteOff size={menuIconSize}/> TRIP ISSUES</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset14', 'smooth', 'center')}><Backpack size={menuIconSize}/> EQUIPMENT</button>
-        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset15', 'smooth', 'center')}><Paperclip size={menuIconSize}/> ATTACHMENTS</button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset1', 'smooth', 'center')}><Fingerprint size={menuIconSize}/> <p className={menuButtonLabelStyle}>IDENTITY</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset2', 'smooth', 'center')}><CalendarClock size={menuIconSize}/> <p className={menuButtonLabelStyle}>DATES</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset3', 'smooth', 'center')}><PersonStanding size={menuIconSize}/> <p className={menuButtonLabelStyle}>APPEARANCE</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset4', 'smooth', 'center')}><ClipboardPlus size={menuIconSize}/> <p className={menuButtonLabelStyle}>MEDICAL</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset5', 'smooth', 'center')}><Car size={menuIconSize}/> <p className={menuButtonLabelStyle}>VEHICLES</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset6', 'smooth', 'center')}><RadioTower size={menuIconSize}/> <p className={menuButtonLabelStyle}>COMMUNICATION</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset7', 'smooth', 'center')}><Bed size={menuIconSize}/> <p className={menuButtonLabelStyle}>STAYING</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset8', 'smooth', 'center')}><BookUser size={menuIconSize}/> <p className={menuButtonLabelStyle}>CONTACTS</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset9', 'smooth', 'center')}><Drama size={menuIconSize}/> <p className={menuButtonLabelStyle}>PERSONALITY</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset10', 'smooth', 'center')}><CandlestickChart size={menuIconSize}/> <p className={menuButtonLabelStyle}>SKILLS</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset11', 'smooth', 'center')}><Users size={menuIconSize}/> <p className={menuButtonLabelStyle}>GROUP</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset12', 'smooth', 'center')}><Route size={menuIconSize}/> <p className={menuButtonLabelStyle}>TRIP</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset13', 'smooth', 'center')}><RouteOff size={menuIconSize}/> <p className={menuButtonLabelStyle}>TRIP ISSUES</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset14', 'smooth', 'center')}><Backpack size={menuIconSize}/> <p className={menuButtonLabelStyle}>EQUIPMENT</p></button>
+        <button className={menuButtonStyle} onClick={() => ScrollTo('fieldset15', 'smooth', 'center')}><Paperclip size={menuIconSize}/> <p className={menuButtonLabelStyle}>ATTACHMENTS</p></button>
       </div>
 
       <form className={form} onSubmit={(e) => handleSubmit(e)} onChange={detectEdition}>
@@ -617,3 +618,4 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
     </div>
   );
 }
+

@@ -88,14 +88,14 @@ export default function SectionHero() {
     return (
         <div className="flex flex-col justify-center items-center p-12 md:p-28">
 
-            <div className="text-3xl md:text-5xl text-colorTextLight font-semibold flex flex-col gap-2 items-center text-center">
+            <div className="text-3xl md:text-5xl text-colorTextLight font-bold flex flex-col gap-2 items-center text-center">
                 <h1>Let trusted contacts know where you go.</h1>
                 <h1>They could save your life.</h1>
             </div>
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-20 mt-12 md:mt-32">
 
-                <div className="cursor-none hidden sm:block">
+                <div className="cursor-none sm:block w-[300px] h-[200px] sm:w-[420px] sm:h-[270px]">
                     <Spline scene="https://prod.spline.design/4pizyTiul0IWxtKj/scene.splinecode" />
                 </div> 
 
