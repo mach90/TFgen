@@ -9,7 +9,7 @@ NAVMENU COMPONENT
 ////////////////////////////////////////////////// */
 export default function NavMenu() {
     return (
-        <div className="flex flex-row gap-24 items-center">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
             <NavLink to="/about">
                 <Button buttonStyle="transparent">About the project</Button>
             </NavLink>
