@@ -61,21 +61,6 @@ const stats = [
         description: 'The most common causes of hiker distress include lack of preparation, underestimating trail difficulty, and environmental conditions.',
         icon: <StarHalf size={iconSize}/>,
     },
-    {
-        title: 'Stat4',
-        description: 'abcd',
-        icon: <BarChartBig size={iconSize}/>,
-    },
-    {
-        title: 'Stat5',
-        description: 'abcd',
-        icon: <BarChartBig size={iconSize}/>,
-    },
-    {
-        title: 'Stat6',
-        description: 'abcd',
-        icon: <BarChartBig size={iconSize}/>,
-    },
 ]
 
 /* //////////////////////////////////////////////////
