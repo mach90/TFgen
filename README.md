@@ -6,9 +6,10 @@ The document generated is a Travel Form to be shared with trusted individuals in
 
 ## To do
 - [ ] Redesign
+- [ ] Menu
 - [ ] Responsive
 - [ ] Form popup
 - [ ] Form validation
 - [ ] Toast
-- [ ] Change page/Refresh page/Reset form... confirmations
+- [ ] Local storage
 - [ ] Sharing generated pdf

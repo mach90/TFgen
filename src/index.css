@@ -40,6 +40,10 @@
     background-color: var(--scrollbar-thumb-hover-color);
   }
   
+  body {
+    background-color: #2b1413;
+  }
+
   input::-moz-placeholder, textarea::-moz-placeholder {
     opacity: 1;
     /* 1 */

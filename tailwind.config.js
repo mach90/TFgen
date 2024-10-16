@@ -62,9 +62,12 @@ export default {
         errorHeading: "#6d2425",
         errorSubheading: "#6d2425",
 
-        form: "#e9b990",
-        formHeading: "#342a21",
-        formText: "#342a21",
+        form: "#361918",
+        formBorder: "#2b1413",
+        formField: "#2b1413",
+        formFieldText: "#f09d4e",
+        formHeading: "#f3ede4",
+        formText: "#f3ede4",
 
         buttonDefault: "#f09d4e",
         buttonDefaultText: "#2b1413",

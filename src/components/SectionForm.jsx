@@ -21,19 +21,19 @@ import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const formSectionStyle = "bg-gradient-to-b from-secondary to-transparent flex flex-row py-12 px-4 sm:px-6 gap-12 justify-center h-full font-default"
-const menuStyle = "flex flex-col gap-2 bg-form py-4 px-8 rounded-md h-max justify-center sticky top-32 hidden md:block";
+const formSectionStyle = "flex flex-row py-12 px-4 sm:px-6 gap-12 justify-center h-full font-default"
+const menuStyle = "flex flex-col gap-2 bg-form py-4 px-8 rounded-md h-max justify-center sticky top-32 hidden md:block border-2 border-formBorder";
 const menuButtonStyle = "flex flex-row gap-2 text-formText items-center text-sm font-medium py-1";
 const menuButtonLabelStyle = "hidden lg:block";
 const menuIconSize = 32;
 const form = "flex flex-col gap-12 w-full h-max formRoot max-w-[800px]";
-const formIntro = "relative flex flex-col gap-4 w-full h-max bg-form text-formText text-sm p-12 rounded-md";
-const formFieldset = "relative flex flex-col gap-2 bg-form text-formText rounded-md p-12";
+const formIntro = "relative flex flex-col gap-4 w-full h-max bg-form text-formText text-sm p-12 rounded-md border-2 border-formBorder";
+const formFieldset = "relative flex flex-col gap-2 bg-form text-formText rounded-md p-12 border-2 border-formBorder";
 const fieldsetDescription = "mb-8 italic text-lg text-right";
 const formLegend = "absolute top-4 left-4 flex flex-row gap-2 text-xl items-center font-bold";
 const formLabel = "font-semibold flex flex-row gap-2 items-center w-full mt-2";
-const formInput = "bg-primary text-primaryText p-1";
-const formSelect = "bg-primary text-primaryText p-1";
+const formInput = "bg-formField text-formFieldText p-1";
+const formSelect = "bg-formField text-formFieldText p-1";
 const formControls = "flex flex-row gap-4 items-center fixed bottom-20 right-5 z-20";
 const formButtonGenerate = "text-textColor2 hover:text-colorTextLight font-bold bg-color3 rounded-md px-3 py-2 text-sm flex gap-2";
 
