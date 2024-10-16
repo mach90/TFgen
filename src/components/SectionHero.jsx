@@ -1,14 +1,13 @@
-/* //////////////////////////////////////////////////
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
 IMPORTS
-////////////////////////////////////////////////// */
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
 import { NavLink } from "react-router-dom";
 import NavButton from "./Button";
-import Spline from '@splinetool/react-spline';
 import { Shield, HandHelping, Rocket, Siren, ChevronsDown, StarHalf, BadgeCheck, CircleSlash, BarChartBig } from "lucide-react";
 
-/* //////////////////////////////////////////////////
-Object containing infos
-////////////////////////////////////////////////// */
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
+DATA (INFOS, STATS)
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
 const iconSize = 60;
 
 const infos = [
@@ -43,7 +42,7 @@ const infos = [
         description: 'Provide crucial information to expedite rescue efforts if needed.',
         icon: <Siren size={iconSize}/>,
     },
-]
+];
 
 const stats = [
     {
@@ -61,73 +60,86 @@ const stats = [
         description: 'The most common causes of hiker distress include lack of preparation, underestimating trail difficulty, and environmental conditions.',
         icon: <StarHalf size={iconSize}/>,
     },
-]
+];
 
-/* //////////////////////////////////////////////////
-DESCRIPTION COMPONENT
-////////////////////////////////////////////////// */
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
+STYLES
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
+const sectionHeroContainerStyle = "bg-gradient-to-b from-secondary to-transparent font-default flex flex-col items-center gap-16 py-16";
+const sectionHeroBlockStyle = "w-full h-full flex flex-col gap-12 justify-center items-center p-12 lg:px-[20%]";
+const sectionHeroBlockTitleStyle = "text-3xl md:text-5xl font-bold font-heading text-secondaryHeading";
+const sectionHeroIntroStyle = "text-5xl sm:text-6xl md:text-8xl font-bold flex flex-col gap-2 items-center text-center";
+const sectionHeroIntroTitleStyle = "text-secondaryHeading font-heading";
+const sectionHeroIntroSubtitleStyle = "text-secondarySubheading font-heading";
+const sectionHeroCtaStyle = "flex flex-col lg:flex-col items-center justify-center gap-2";
+const sectionHeroCtaTitleStyle = "text-xl sm:text-4xl font-bold text-secondaryHeading font-heading";
+const sectionHeroCtaTextStyle = "text-md sm:text-lg font-medium text-secondaryText";
+const sectionHeroScrollStyle = "text-secondaryText animate-bounce flex flex-col justify-center items-center";
+const sectionHero2CardsContainerStyle = "grid md:grid-cols-2 gap-12 justify-between items-center";
+const sectionHero3CardsContainerStyle = "grid md:grid-cols-2 xl:grid-cols-3 gap-12 justify-between items-center";
+const sectionHeroCardContainerStyle = "flex flex-col sm:flex-row gap-4 items-center rounded-md h-full p-4 md:p-6 bg-alternate lg:max-w-96";
+const sectionHeroCardIconStyle = "font-bold text-alternateHeading text-5xl";
+const sectionHeroCardInfosContainerStyle = "flex flex-col gap-2";
+const sectionHeroCardInfosTitleStyle = "font-medium font-heading text-alternateHeading text-xl";
+const sectionHeroCardInfosDescriptionStyle = "text-md text-alternateText";
+
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
+SECTION HERO COMPONENT
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
 export default function SectionHero() {
     /* //////////////////////////////////////////////////
     JSX
     ////////////////////////////////////////////////// */
     return (
-        <div className="flex flex-col justify-center items-center p-12 md:p-28">
+        <div className={sectionHeroContainerStyle}>
 
-            <div className="text-3xl md:text-5xl text-colorTextLight font-bold flex flex-col gap-2 items-center text-center">
-                <h1>Let trusted contacts know where you go.</h1>
-                <h1>They could save your life.</h1>
-            </div>
-
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-20 mt-12 md:mt-32">
-
-                <div className="cursor-none sm:block w-[300px] h-[200px] sm:w-[420px] sm:h-[270px]">
-                    <Spline scene="https://prod.spline.design/4pizyTiul0IWxtKj/scene.splinecode" />
-                </div> 
-
-                <div className="flex flex-col gap-6 items-center lg:items-start">
-                    <div className="flex flex-col gap-2 items-center lg:items-start">
-                        <p className="text-xl sm:text-3xl font-bold text-colorTextLight">Create your Travel Form</p>
-                        <p className="text-md sm:text-lg font-medium">{`It's easy and respect your privacy`}</p>
-                    </div>
-                    <div className="">
-                        <NavLink to="/form">
-                            <NavButton buttonStyle="default">Get started now</NavButton>
-                        </NavLink>
-                    </div>
+            <div className={sectionHeroBlockStyle}>
+                <div className={sectionHeroIntroStyle}>
+                    <h1 className={sectionHeroIntroTitleStyle}>Let trusted contacts know where you go.</h1>
+                    <h1 className={sectionHeroIntroSubtitleStyle}>They could save your life.</h1>
                 </div>
-                
-            </div>
 
-            <div className="mt-16 text-colorTextLight animate-bounce z-0"><ChevronsDown size={48} /></div>
+                <div className={sectionHeroCtaStyle}>
+                    <h2 className={sectionHeroCtaTitleStyle}>Create your Travel Form</h2>
+                    <p className={sectionHeroCtaTextStyle}>It's easy and respect your privacy</p>
+                    <NavLink to="/form"><NavButton buttonStyle="default">Get started now</NavButton></NavLink>
+                </div>
 
-            <h2 className="text-3xl md:text-5xl font-bold text-colorTextLight mt-32 md:mt-60">Why using Travel Form Generator ?</h2>
-
-            <div className="grid md:grid-cols-2 gap-12 justify-between items-center mt-16 md:mt-32">
-                {infos.map((info) => (
-                    <div key={info.title} className="flex flex-col sm:flex-row gap-4 items-center border border-color2 rounded-md h-full p-4 md:p-6 bg-colorBackground bg-opacity-60 lg:w-96">
-                        <div className="text-color2">{info.icon}</div>
-                        <div className="flex flex-col gap-2">
-                            <p className="font-bold text-white text-lg">{info.title}</p>
-                            <p className="text-md">{info.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            <h2 className="text-3xl md:text-5xl font-bold text-colorTextLight mt-32 md:mt-60">Some stats and facts</h2>
-
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-12 justify-between items-center mt-16 md:mt-32">
-                {stats.map((stat) => (
-                    <div key={stat.title} className="flex flex-col sm:flex-row gap-4 items-center border border-color2 rounded-md h-full p-4 md:p-6 bg-colorBackground bg-opacity-60 lg:w-96">
-                        <div className="font-bold text-color2 text-5xl">{stat.icon}</div>
-                        <div className="flex flex-col gap-2">
-                            <p className="font-bold text-white text-lg">{stat.title}</p>
-                            <p className="text-md">{stat.description}</p>
-                        </div>
-                    </div>
-                ))}
+                <div className={sectionHeroScrollStyle}>More infos <ChevronsDown size={24} /></div>
             </div>
             
+            <div className={sectionHeroBlockStyle}>
+                <h2 className={sectionHeroBlockTitleStyle}>Why using Travel Form Generator ?</h2>
+
+                <div className={sectionHero2CardsContainerStyle}>
+                    {infos.map((info) => (
+                        <div key={info.title} className={sectionHeroCardContainerStyle}>
+                            <div className={sectionHeroCardIconStyle}>{info.icon}</div>
+                            <div className={sectionHeroCardInfosContainerStyle}>
+                                <p className={sectionHeroCardInfosTitleStyle}>{info.title}</p>
+                                <p className={sectionHeroCardInfosDescriptionStyle}>{info.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className={sectionHeroBlockStyle}>
+                <h2 className={sectionHeroBlockTitleStyle}>Some stats and facts</h2>
+
+                <div className={sectionHero3CardsContainerStyle}>
+                    {stats.map((stat) => (
+                        <div key={stat.title} className={sectionHeroCardContainerStyle}>
+                            <div className={sectionHeroCardIconStyle}>{stat.icon}</div>
+                            <div className={sectionHeroCardInfosContainerStyle}>
+                                <p className={sectionHeroCardInfosTitleStyle}>{stat.title}</p>
+                                <p className={sectionHeroCardInfosDescriptionStyle}>{stat.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
         </div>
     )
 }

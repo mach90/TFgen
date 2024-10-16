@@ -1,13 +1,18 @@
-/* //////////////////////////////////////////////////
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
 IMPORTS
-////////////////////////////////////////////////// */
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
 import { useEffect, useState } from 'react';
 import { ArrowUpFromDot } from 'lucide-react';
 import NavButton from './Button';
 
-/* //////////////////////////////////////////////////
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
+STYLES
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
+const controlArrowUpContainerStyle = "flex flex-row fixed bottom-20 left-5 gap-4 items-center justify-end w-max rounded-md z-20";
+
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
 ARROW SCOLL UP TO TOP COMPONENT
-////////////////////////////////////////////////// */
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
 function ControlArrowUp({ScrollTo}) {
     /* //////////////////////////////////////////////////
     STATE Controls buttons visibility
@@ -35,17 +40,11 @@ function ControlArrowUp({ScrollTo}) {
     }, []);
 
     /* //////////////////////////////////////////////////
-    TAILWIND CSS CLASSES
-    ////////////////////////////////////////////////// */
-    const buttonBackground = "flex flex-row fixed bottom-20 left-5 gap-4 items-center justify-end w-auto bg-darkControlsBackground rounded-md z-20";
-    // const buttonStyle = "text-gray-300 bg-gray-500 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-base font-medium flex flex-row gap-2";
-
-    /* //////////////////////////////////////////////////
     JSX
     ////////////////////////////////////////////////// */
     return (
         <>
-            {controlsVisibility && <div className={buttonBackground}>
+            {controlsVisibility && <div className={controlArrowUpContainerStyle}>
                 <NavButton buttonStyle='arrow' onClick={() => ScrollTo('top', 'smooth')}><ArrowUpFromDot /></NavButton>
             </div>}
         </>

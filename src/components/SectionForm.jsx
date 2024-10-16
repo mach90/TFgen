@@ -1,37 +1,46 @@
-/* //////////////////////////////////////////////////
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
 IMPORTS
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
+/* //////////////////////////////////////////////////
+DEPENDENCIES
 ////////////////////////////////////////////////// */
 import { useState } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
+import { NavLink } from 'react-router-dom';
+/* //////////////////////////////////////////////////
+COMPONENTS
+////////////////////////////////////////////////// */
 import Button from './Button';
 import MyDocument from './SectionDocument';
-import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2, CalendarClock, Download, Info } from 'lucide-react';
 import LabelInfos from './LabelInfos';
-import { NavLink } from 'react-router-dom';
-
 /* //////////////////////////////////////////////////
-TRAVEL FORM COMPONENT
+ICONS
 ////////////////////////////////////////////////// */
-export default function SectionForm({state, dispatch, ScrollTo}) {
-  /* //////////////////////////////////////////////////
-  TailwindCSS classes for form elements
-  ////////////////////////////////////////////////// */
-  const formSectionStyle = "flex flex-row py-12 px-4 sm:px-6 gap-12 justify-center h-full"
-  const menuStyle = "flex flex-col gap-2 bg-colorBackground bg-opacity-60 py-4 px-8 border border-textColor1 rounded-md h-max justify-center sticky top-32 hidden md:block";
-  const menuButtonStyle = "flex flex-row gap-2 text-textColor1 hover:text-colorTextLight items-center text-sm font-medium py-1";
-  const menuButtonLabelStyle = "hidden lg:block";
-  const menuIconSize = 32;
-  const form = "flex flex-col gap-12 w-full h-max formRoot max-w-[800px]";
-  const formIntro = "relative flex flex-col gap-4 w-full h-max bg-colorBackground bg-opacity-60 border border-color3 text-color3 text-sm p-12 rounded-md";
-  const formFieldset = "relative flex flex-col gap-2 bg-colorBackground bg-opacity-60 border border-textColor1 rounded-md p-12";
-  const fieldsetDescription = "text-textColor1 mb-8 italic text-lg text-right";
-  const formLegend = "absolute top-4 left-4 flex flex-row text-textColor1 gap-2 text-xl items-center font-bold";
-  const formLabel = "font-semibold text-textColor1 flex flex-row gap-2 items-center w-full mt-2";
-  const formInput = "bg-color1 border border-textColor1 text-color2 p-1";
-  const formSelect = "bg-color1 border border-textColor1 text-color2 p-1";
-  const formControls = "flex flex-row gap-4 items-center fixed bottom-20 right-5 z-20";
-  const formButtonGenerate = "text-textColor2 hover:text-colorTextLight font-bold bg-color3 rounded-md px-3 py-2 text-sm flex gap-2";
+import { Users, BookUser, Fingerprint, PersonStanding, ClipboardPlus, Car, Bed, RadioTower, Drama, CandlestickChart, Backpack, Route, RouteOff, Paperclip, FileText, Trash2, CalendarClock, Download, Info } from 'lucide-react';
 
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
+STYLES
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
+const formSectionStyle = "bg-gradient-to-b from-secondary to-transparent flex flex-row py-12 px-4 sm:px-6 gap-12 justify-center h-full font-default"
+const menuStyle = "flex flex-col gap-2 bg-form py-4 px-8 rounded-md h-max justify-center sticky top-32 hidden md:block";
+const menuButtonStyle = "flex flex-row gap-2 text-formText items-center text-sm font-medium py-1";
+const menuButtonLabelStyle = "hidden lg:block";
+const menuIconSize = 32;
+const form = "flex flex-col gap-12 w-full h-max formRoot max-w-[800px]";
+const formIntro = "relative flex flex-col gap-4 w-full h-max bg-form text-formText text-sm p-12 rounded-md";
+const formFieldset = "relative flex flex-col gap-2 bg-form text-formText rounded-md p-12";
+const fieldsetDescription = "mb-8 italic text-lg text-right";
+const formLegend = "absolute top-4 left-4 flex flex-row gap-2 text-xl items-center font-bold";
+const formLabel = "font-semibold flex flex-row gap-2 items-center w-full mt-2";
+const formInput = "bg-primary text-primaryText p-1";
+const formSelect = "bg-primary text-primaryText p-1";
+const formControls = "flex flex-row gap-4 items-center fixed bottom-20 right-5 z-20";
+const formButtonGenerate = "text-textColor2 hover:text-colorTextLight font-bold bg-color3 rounded-md px-3 py-2 text-sm flex gap-2";
+
+/* ████████████████████████████████████████████████████████████████████████████████████████████████████
+TRAVEL FORM COMPONENT
+████████████████████████████████████████████████████████████████████████████████████████████████████ */
+export default function SectionForm({state, dispatch, ScrollTo}) {
   /* //////////////////////////////////////////////////
   Form change/edition detection
   ////////////////////////////////////////////////// */
@@ -52,6 +61,7 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
       sexePayload: e.target.sexeInput.value,
       dobPayload: e.target.dobInput.value,
       nationalityPayload: e.target.nationalityInput.value,
+      ethnicityPayload: e.target.ethnicityInput.value,
       etdPayload: e.target.etdInput.value,
       etaPayload: e.target.etaInput.value,
       heightPayload: e.target.heightInput.value,
@@ -121,6 +131,7 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
       sexePayload: "",
       dobPayload: "",
       nationalityPayload: "",
+      ethnicityPayload: "",
       etdPayload: "",
       etaPayload: "",
       heightPayload: "",
@@ -178,6 +189,7 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
     formRoot.sexeInput.value = "";
     formRoot.dobInput.value = "";
     formRoot.nationalityInput.value = "";
+    formRoot.ethnicityInput.value = "";
     formRoot.etdInput.value = "";
     formRoot.etaInput.value = "";
     formRoot.heightInput.value = "";
@@ -293,6 +305,9 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
 
           <label className={formLabel} htmlFor="nationalityInput">Nationality <LabelInfos icon="none" infos=""/></label>
           <input className={formInput} id="nationalityInput" type="text"></input>
+
+          <label className={formLabel} htmlFor="ethnicityInput">Nationality <LabelInfos icon="none" infos=""/></label>
+          <input className={formInput} id="ethnicityInput" type="text"></input>
         </fieldset>
 
         <fieldset id="fieldset2" className={formFieldset}>

@@ -90,6 +90,7 @@ export default function SectionDocument ({state}) {
             <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Biological sexe: </Text><Text style={styles.sectionOutput}>{stateVariables.sexe}</Text></View>
             <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>DOB (Y/M/D): </Text><Text style={styles.sectionOutput}>{stateVariables.dob}</Text></View>
             <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Nationality: </Text><Text style={styles.sectionOutput}>{stateVariables.nationality}</Text></View>
+            <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Ethnicity: </Text><Text style={styles.sectionOutput}>{stateVariables.ethnicity}</Text></View>
         </View>
 
         <View style={styles.section} wrap={false}>

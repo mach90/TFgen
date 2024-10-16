@@ -5,9 +5,10 @@ This app uses [React-PDF](https://react-pdf.org/) to generate a pdf document fro
 The document generated is a Travel Form to be shared with trusted individuals in order to take appropriate actions in case of an emergency during your trip.
 
 ## To do
-- [x] Redesign
-- [x] Responsive
+- [ ] Redesign
+- [ ] Responsive
 - [ ] Form popup
 - [ ] Form validation
+- [ ] Toast
 - [ ] Change page/Refresh page/Reset form... confirmations
 - [ ] Sharing generated pdf
