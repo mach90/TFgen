@@ -306,7 +306,7 @@ export default function SectionForm({state, dispatch, ScrollTo}) {
           <label className={formLabel} htmlFor="nationalityInput">Nationality <LabelInfos icon="none" infos=""/></label>
           <input className={formInput} id="nationalityInput" type="text"></input>
 
-          <label className={formLabel} htmlFor="ethnicityInput">Nationality <LabelInfos icon="none" infos=""/></label>
+          <label className={formLabel} htmlFor="ethnicityInput">Ethnicity <LabelInfos icon="none" infos=""/></label>
           <input className={formInput} id="ethnicityInput" type="text"></input>
         </fieldset>
 
