@@ -165,8 +165,8 @@ export default function SectionDocument ({state}) {
           {/* <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>outdoorSkill: </Text><Text style={styles.sectionOutput}>{stateVariables.outdoorSkill}</Text></View> */}
           <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Hiking experience: </Text><Text style={styles.sectionOutput}>{stateVariables.hikingExperience}</Text></View>
           <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Survival skills: </Text><Text style={styles.sectionOutput}>{stateVariables.survivalSkills}</Text></View>
-          <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Fighting ability: </Text><Text style={styles.sectionOutput}>{stateVariables.militaryExperience}</Text></View>
-          <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Military experience: </Text><Text style={styles.sectionOutput}>{stateVariables.fightingSkills}</Text></View>
+          <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Military experience: </Text><Text style={styles.sectionOutput}>{stateVariables.militaryExperience}</Text></View>
+          <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Fighting ability: </Text><Text style={styles.sectionOutput}>{stateVariables.fightingSkills}</Text></View>
           <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Medic skills: </Text><Text style={styles.sectionOutput}>{stateVariables.medicSkills}</Text></View>
         </View>
 

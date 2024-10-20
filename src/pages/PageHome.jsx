@@ -2,6 +2,7 @@
 IMPORTS
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 import SectionHero from "../components/SectionHero";
+import SectionInfos from "../components/SectionInfos";
 import FooterBar from "../components/FooterBar";
 import NavBar from "../components/NavBar";
 import Container from "../components/Container";
@@ -14,6 +15,7 @@ export default function PageHome() {
             <Container containerID="homepage">
                 <NavBar/>
                 <SectionHero/>
+                <SectionInfos/>
                 <FooterBar/> 
             </Container>
     );

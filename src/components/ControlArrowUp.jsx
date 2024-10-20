@@ -2,13 +2,13 @@
 IMPORTS
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 import { useEffect, useState } from 'react';
-import { ArrowUpFromDot } from 'lucide-react';
 import NavButton from './Button';
+import { FaArrowUp } from 'react-icons/fa';
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const controlArrowUpContainerStyle = "flex flex-row fixed bottom-20 left-5 gap-4 items-center justify-end w-max rounded-md z-20";
+const controlArrowUpContainerStyle = "fixed bottom-20 left-5 flex flex-row gap-4 items-center justify-end w-max rounded-md z-20";
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 ARROW SCOLL UP TO TOP COMPONENT
@@ -45,7 +45,7 @@ function ControlArrowUp({ScrollTo}) {
     return (
         <>
             {controlsVisibility && <div className={controlArrowUpContainerStyle}>
-                <NavButton buttonStyle='arrow' onClick={() => ScrollTo('top', 'smooth')}><ArrowUpFromDot /></NavButton>
+                <NavButton buttonStyle='arrow' onClick={() => ScrollTo('top', 'smooth')}><FaArrowUp /></NavButton>
             </div>}
         </>
     );

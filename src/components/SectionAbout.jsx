@@ -1,7 +1,7 @@
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const sectionAboutContainerStyle = "flex flex-col justify-start items-center text-justify px-12 py-12 w-full gap-8 text-lg font-medium text-secondaryText font-default";
+const sectionAboutContainerStyle = "flex flex-col justify-start items-center text-justify px-12 py-12 w-full gap-8 text-lg font-medium text-primaryText font-default";
 const sectionAboutTitleStyle = "text-3xl md:text-4xl font-bold font-heading";
 const sectionAboutParagraphStyle = "sm:w-96";
 

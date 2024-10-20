@@ -2,7 +2,7 @@
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 const containerStyle = "text-primaryText flex flex-col justify-between min-h-screen";
-const containerBackgroundImageStyle = "fixed inset-0 z-[-10] bg-[url(./img/isoline.svg)] bg-fit bg-no-repeat";
+const containerBackgroundImageStyle = "fixed inset-0 z-[-10] bg-primary bg-fit bg-no-repeat";
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 CONTAINER COMPONENT
