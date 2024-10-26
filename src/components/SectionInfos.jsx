@@ -9,7 +9,7 @@ import { FaBookOpen, FaQuestion } from "react-icons/fa";
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const sectionInfosContainerStyle = "bg-primary w-full font-default flex flex-col items-center py-40";
+const sectionInfosContainerStyle = "bg-primary w-full font-default flex flex-col items-center py-24";
 
 const sectionInfosBlockStyle = "w-full h-full flex flex-col gap-12 justify-center items-center p-12 lg:px-[20%]";
 const sectionInfosBlockWithImageStyle = "grid grid-cols-2 w-full h-full gap-4 py-8 border-t border-primaryBorder";
@@ -46,6 +46,8 @@ export default function sectionInfos() {
     return (
         <div className={sectionInfosContainerStyle}>
             
+            <Spacer />
+
             <div className={sectionInfosBlockStyle}>
                 <h2 className={sectionInfosBlockTitleStyle}><FaQuestion className={sectionInfoBlockTitleIconStyle} /> Why using Travel Form Generator ?</h2>
                 <p className={sectionInfosBlockParagraphStyle}>Our Travel Form Generator simplifies trip planning by helping you document and share essential travel details. It's a quick way to enhance your safety and preparedness, giving you and your loved ones peace of mind during your adventures.</p>
