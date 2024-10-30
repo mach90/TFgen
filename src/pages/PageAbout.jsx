@@ -11,10 +11,12 @@ HOMEPAGE PAGE COMPONENT
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 export default function PageAbout() {
     return (
-            <Container containerID="homepage">
-                <NavBar/>
-                <SectionAbout/>
-                <FooterBar/> 
-            </Container>
+        <>
+        <NavBar/>
+        <Container containerID="homepage">
+            <SectionAbout/>
+        </Container>
+        <FooterBar/> 
+        </>
     );
 }

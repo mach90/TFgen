@@ -11,10 +11,12 @@ PRIVACY PAGE COMPONENT
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 export default function PagePrivacy() {
     return (
+        <>
+            <NavBar />
             <Container containerID="about">
-                <NavBar />
                 <SectionPrivacy />
-                <FooterBar/> 
             </Container>
+            <FooterBar/> 
+        </>
     );
 }

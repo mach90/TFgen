@@ -12,11 +12,13 @@ HOMEPAGE PAGE COMPONENT
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 export default function PageHome() {
     return (
+        <>
+            <NavBar/>
             <Container containerID="homepage">
-                <NavBar/>
                 <SectionHero/>
                 <SectionInfos/>
-                <FooterBar/> 
             </Container>
+            <FooterBar/> 
+        </>
     );
 }

@@ -11,10 +11,12 @@ import Section404 from "../components/Section404";
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 export default function Page404() {
     return (
+        <>
+            <NavBar/>
             <Container containerID="404">
-                <NavBar/>
                 <Section404/>
-                <FooterBar/> 
             </Container>
+            <FooterBar/> 
+        </>
     );
 }

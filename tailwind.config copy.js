@@ -13,10 +13,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        // heading: "'Bubblegum Sans', 'sans-serif'",
-        // heading: "'Fjalla One', 'sans-serif'",
-        heading: "'Oswald', 'sans-serif'",
-        default: "'Open Sans', 'sans-serif'",
+        heading: "'Courgette', 'cursive'",
+        default: "'Libre Baskerville', 'serif'",
       },
       colors: {
         colorBackgroundDark: "#ff00ff",
@@ -84,20 +82,12 @@ export default {
 
         buttonDefault: "#fcbd40",
         buttonDefaultText: "#142317",
+        buttonTransparent: "#e6e6e6",
         buttonTransparentText: "#e6e6e6",
         buttonTransparentBorder: "#e6e6e6",
       },
       backgroundImage: {
-        'bgIsoline': "url('public/isoline.svg')",
-        'bgPattern': "url('public/bgPattern.png')",
-        'bgCard': "url('public/bgCard.png')",
-        'bgForm': "url('public/bgForm.png')",
-      },
-      cursor: {
-        'triangle': 'url("public/triangle-cursor.svg"), default',
-        'finger': 'url("public/finger-cursor.svg"), pointer',
-        'eye': 'url("public/eye-cursor.svg"), zoom-in',
-        'input': 'url("public/input-cursor.svg"), text',
+        'exampleForm': "url('img/example-form.avif')",
       },
     },
   },

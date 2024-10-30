@@ -1,9 +1,9 @@
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const sectionAboutContainerStyle = "flex flex-col justify-start items-center text-justify px-12 py-12 w-full gap-8 text-lg font-medium text-primaryText font-default";
-const sectionAboutTitleStyle = "text-3xl md:text-4xl font-bold font-heading";
-const sectionAboutParagraphStyle = "sm:w-96";
+const sectionAboutContainerStyle = "min-h-screen flex flex-col justify-center items-center px-12 py-12 md:py-20 lg:py-28 xl:py-40 gap-8";
+const sectionAboutTitleStyle = "text-4xl md:text-5xl font-bold font-heading text-secondarySubheading rotate-[-3deg]";
+const sectionAboutParagraphStyle = "text-md md:text-xl text-justify text-secondaryText max-w-md";
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 SECTION ABOUT COMPONENT

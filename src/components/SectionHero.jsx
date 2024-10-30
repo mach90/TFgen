@@ -8,18 +8,18 @@ import { BiSolidChevronsDown } from "react-icons/bi";
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const sectionHeroContainerStyle = "bg-[url(./img/isoline.svg)] font-default flex flex-col justify-start items-center gap-16 py-16 min-h-screen";
-const sectionHeroBlockStyle = "w-full h-full flex flex-col gap-20 justify-center items-center p-12 lg:px-[20%]";
+const sectionHeroContainerStyle = "bg-bgIsoline bg-no-repeat bg-fit font-default flex flex-col justify-center items-center gap-16 py-16 min-h-[calc(100vh-0px)]";
+const sectionHeroBlockStyle = "w-full h-full flex flex-col gap-10 md:gap-20 justify-center items-center p-6 md:p-12 lg:px-[20%]";
 
-const sectionHeroIntroStyle = "text-5xl sm:text-6xl md:text-8xl font-bold flex flex-col gap-2 items-center text-center";
+const sectionHeroIntroStyle = "text-3xl md:text-6xl lg:text-7xl max-w-3xl font-bold flex flex-col gap-2 items-center text-center";
 const sectionHeroIntroTitleStyle = "text-secondaryHeading font-heading";
 const sectionHeroIntroSubtitleStyle = "text-secondarySubheading font-heading";
 
-const sectionHeroCtaStyle = "flex flex-col lg:flex-col items-center justify-center gap-4";
-const sectionHeroCtaTitleStyle = "text-xl sm:text-4xl font-bold text-secondaryHeading font-heading";
-const sectionHeroCtaTextStyle = "text-md sm:text-lg font-medium text-secondaryText";
+const sectionHeroCtaStyle = "flex flex-col lg:flex-col items-center justify-center gap-2 md:gap-4";
+const sectionHeroCtaTitleStyle = "text-xl md:text-4xl lg:text-5xl font-bold text-secondaryHeading font-heading";
+const sectionHeroCtaTextStyle = "text-sm md:text-lg lg:text-2xl font-medium text-secondaryText";
 
-const sectionHeroScrollStyle = "text-secondaryText animate-bounce flex flex-col justify-center items-center";
+const sectionHeroScrollStyle = "text-md md:text-2xl lg:text-3xl text-secondaryText animate-bounce flex flex-col justify-center items-center";
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 SECTION HERO COMPONENT
@@ -29,7 +29,7 @@ export default function SectionHero() {
     JSX
     ////////////////////////////////////////////////// */
     return (
-        <div className={sectionHeroContainerStyle}>
+        <header className={sectionHeroContainerStyle}>
 
             <div className={sectionHeroBlockStyle}>
                 <div className={sectionHeroIntroStyle}>
@@ -46,6 +46,6 @@ export default function SectionHero() {
                 <div className={sectionHeroScrollStyle}>More infos <BiSolidChevronsDown size={24} /></div>
             </div>
 
-        </div>
+        </header>
     )
 }

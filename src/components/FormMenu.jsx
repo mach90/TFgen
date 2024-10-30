@@ -7,9 +7,9 @@ import { formFieldsets } from "../data/data.js";
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const menuStyle = "flex flex-col gap-2 bg-form py-4 px-8 rounded-md h-max justify-center sticky top-32 hidden md:block border-2 border-dashed border-formBorder shadow-md";
-const menuButtonStyle = "flex flex-row gap-2 text-formSubheading items-center text-sm font-medium py-1 ";
-const menuButtonActiveStyle = "flex flex-row gap-2 text-formHover items-center text-sm font-medium py-1 ";
+const menuStyle = "flex flex-col gap-2 bg-bgForm bg-no-repeat bg-cover py-4 px-8 rounded-md h-max justify-center sticky top-32 hidden md:block shadow-lg";
+const menuButtonStyle = "flex flex-row gap-2 text-formSubheading items-center text-sm font-medium py-1 cursor-finger";
+const menuButtonActiveStyle = "flex flex-row gap-2 text-formHover items-center text-sm font-medium py-1 cursor-finger";
 const menuButtonLabelStyle = "hidden lg:block";
 const menuIconSize = 32;
 

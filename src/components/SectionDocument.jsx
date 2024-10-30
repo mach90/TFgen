@@ -177,7 +177,7 @@ export default function SectionDocument ({state}) {
 
         <View style={styles.section} wrap={false}>
           <Text style={styles.sectionTitle}>TRIP PLANNING</Text>
-          <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Paper money: </Text><Text style={styles.sectionOutput}>{stateVariables.paperMoney}</Text></View>
+          <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Paper money (days): </Text><Text style={styles.sectionOutput}>{stateVariables.paperMoney}</Text></View>
           <View style={styles.sectionGroup}><Text style={styles.sectionLabel}>Day to day plan: </Text><Text style={styles.sectionOutput}>{stateVariables.tripPlan}</Text></View>
         </View>
 
