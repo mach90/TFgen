@@ -7,7 +7,7 @@ import PageHome from "./pages/PageHome";
 // import PagePrivacy from "./pages/PagePrivacy";
 import PageForm from "./pages/PageForm";
 import Page404 from "./pages/Page404";
-import './index.css'
+import './index.css';
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 APP COMPONENT with Routes

@@ -1,6 +1,9 @@
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 IMPORTS
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
+/* //////////////////////////////////////////////////
+ICONS
+////////////////////////////////////////////////// */
 import { FaBed, FaBookOpen, FaCalendarAlt, FaCar, FaCheckCircle, FaCreativeCommonsZero, FaNotesMedical, FaPaperclip, FaRoute, FaSmile, FaTheaterMasks, FaUser } from "react-icons/fa";
 import { MdPrivacyTip } from "react-icons/md";
 import { FaCircleXmark, FaHelmetSafety, FaTowerCell, FaUserGroup } from "react-icons/fa6";
@@ -10,6 +13,11 @@ import { IoIosBody } from "react-icons/io";
 import { LuCandlestickChart } from "react-icons/lu";
 import { TbRouteOff } from "react-icons/tb";
 import { BsFillBackpack2Fill } from "react-icons/bs";
+/* //////////////////////////////////////////////////
+STORIES IMAGES
+////////////////////////////////////////////////// */
+import IllustrationUtahDesert from "../img/illustration-utah-desert.avif";
+import IllustrationVercorsMountain from "../img/illustration-vercors-mountain.avif";
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 INFOS
@@ -74,29 +82,29 @@ STORIES
 ████████████████████████████████████████████████████████████████████████████████████████████████████ */
 const stories = [
     {
-        storyTitle: "Story A",
+        storyTitle: "Coordinates",
         storyIcon: FaBookOpen,
-        storyParagraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada suscipit posuere. Nulla ac porta urna. Sed hendrerit tortor velit, quis tincidunt mi rhoncus non. Duis consequat feugiat tempor. Suspendisse potenti. Suspendisse gravida suscipit sagittis. In pulvinar elit dolor, quis scelerisque nibh sagittis vitae. Duis ac tellus nulla.",
-        storyImage: "https://images.unsplash.com/photo-1729157192628-47b6428a32c5?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        storyParagraph: "David, an amateur landscape photographer, was exploring remote canyons in Utah's backcountry. His travel form noted a specific detail: he was working on a project photographing rare desert wildflowers, which only bloom for a few days in early spring. When he missed his check-in deadline, his brother knew something was wrong - David had listed three precise GPS coordinates where these flowers were reported, planning to visit them in sequence. The form also detailed his limited desert experience and water supply. This prompted his brother to alert authorities just 18 hours after the missed check-in, rather than assuming David was just taking extra time for photos. SAR teams efficiently checked the three locations, finding him at the second coordinate. His car had gotten stuck in deep sand, and while trying to walk out, he had become disoriented in the identical-looking canyons. The specific coordinates, combined with the early alert due to his brother knowing his exact water limitations, led to his rescue before severe dehydration set in.",
+        storyImage: IllustrationUtahDesert,
     },
     {
-        storyTitle: "Story B",
+        storyTitle: "'For the weekend'",
         storyIcon: FaBookOpen,
-        storyParagraph: "Vivamus imperdiet, nulla in ultricies vehicula, nulla elit dictum ex, et tincidunt risus dui quis tortor. Nulla ultrices risus ac scelerisque faucibus. Etiam efficitur sem ante. Morbi eu mi sit amet arcu tempus iaculis eu sed metus. Cras vel magna quis est sollicitudin pretium malesuada in nisl. Cras fringilla elit eu orci dignissim, non ornare enim malesuada. Suspendisse tincidunt elit vitae mauris rutrum dictum. Fusce arcu sapien, eleifend non dui id, vulputate imperdiet mauris. Phasellus tincidunt maximus erat, vel laoreet sapien finibus a. Vivamus dictum auctor posuere.",
-        storyImage: "https://images.unsplash.com/photo-1729157268193-93ef07a389c9?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        storyParagraph: "Thomas, 32, was found deceased in the Vercors Mountains after six days. He had told his sister he was 'going hiking for the weekend' and to expect him back Sunday night. Monday morning, his sister tried to reach him but Thomas didn't answer, she wasn't overly concerned, Thomas rarely answer his phone while at work. Only on Monday evening did she started feeling worried, she reported him missing on Tuesday afternoon after hesitation. The investigation revealed Thomas had parked near Romeyer village for what turned out to be an ambitious 17km hike to the remote Tussac plateau. On Sunday afternoon, he had twisted his ankle badly on the descent but managed to set up his summer tent, hoping to recover enough to walk back the next day. What his sister didn't know, and what would have been crucial information: Thomas had taken the steep and isolated Pas de Côte Belle trail. A violent autumn storm hit the area Monday evening. The PGHM later determined that Thomas, unable to walk properly and still 12km from his car, succumbed to hypothermia during this storm. A simple travel form indicating his exact trail choice would have led to a Monday morning alert and a rapid search along a specific path - the PGHM could have reached his tent before the fatal storm hit.",
+        storyImage: IllustrationVercorsMountain,
     },
-    {
-        storyTitle: "Story C",
-        storyIcon: FaBookOpen,
-        storyParagraph: "Vestibulum interdum sit amet turpis quis maximus. Suspendisse nec justo id nisl pellentesque mattis nec nec quam. Aliquam vulputate sit amet dui nec maximus. Donec consectetur tortor pulvinar, rhoncus turpis ac, venenatis leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin vestibulum molestie justo, ac lacinia dui volutpat quis. Suspendisse maximus felis enim, in consectetur est rhoncus ut. Mauris eget arcu ac augue lobortis blandit.",
-        storyImage: "https://images.unsplash.com/photo-1729157140085-113c73cdb252?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-        storyTitle: "Story D",
-        storyIcon: FaBookOpen,
-        storyParagraph: "Aenean mollis scelerisque diam, quis viverra metus fermentum vitae. Maecenas nunc turpis, ultrices at accumsan sed, vehicula non arcu. Donec ac placerat diam. Praesent vitae hendrerit purus. Duis non ullamcorper ex. Praesent ut enim odio. Donec id elementum dolor, in semper orci. Sed sed molestie dui, eget faucibus ante. Curabitur lacinia dapibus consequat. Maecenas tellus diam, hendrerit nec tempor eu, euismod non enim. Donec eget pellentesque urna. Quisque sodales, velit vitae pretium pharetra, nulla sem sodales nibh, quis luctus orci odio nec metus.",
-        storyImage: "https://images.unsplash.com/photo-1729157157341-35895c769ef7?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
+    // {
+    //     storyTitle: "Story C",
+    //     storyIcon: FaBookOpen,
+    //     storyParagraph: "Vestibulum interdum sit amet turpis quis maximus. Suspendisse nec justo id nisl pellentesque mattis nec nec quam. Aliquam vulputate sit amet dui nec maximus. Donec consectetur tortor pulvinar, rhoncus turpis ac, venenatis leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin vestibulum molestie justo, ac lacinia dui volutpat quis. Suspendisse maximus felis enim, in consectetur est rhoncus ut. Mauris eget arcu ac augue lobortis blandit.",
+    //     storyImage: "https://images.unsplash.com/photo-1729157140085-113c73cdb252?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    // },
+    // {
+    //     storyTitle: "Story D",
+    //     storyIcon: FaBookOpen,
+    //     storyParagraph: "Aenean mollis scelerisque diam, quis viverra metus fermentum vitae. Maecenas nunc turpis, ultrices at accumsan sed, vehicula non arcu. Donec ac placerat diam. Praesent vitae hendrerit purus. Duis non ullamcorper ex. Praesent ut enim odio. Donec id elementum dolor, in semper orci. Sed sed molestie dui, eget faucibus ante. Curabitur lacinia dapibus consequat. Maecenas tellus diam, hendrerit nec tempor eu, euismod non enim. Donec eget pellentesque urna. Quisque sodales, velit vitae pretium pharetra, nulla sem sodales nibh, quis luctus orci odio nec metus.",
+    //     storyImage: "https://images.unsplash.com/photo-1729157157341-35895c769ef7?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    // },
 ]
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████

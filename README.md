@@ -10,10 +10,10 @@ The document generated is a Travel Form to be shared with trusted individuals wh
 ## TO DO
 - [x] Design 🟢
 - [x] Form Menu 🟢
+- [x] Responsiveness 🟢
+- [x] Form popup 🟢
 - [/] ScrollTo in util folder 🟡
-- [/] Responsiveness 🟡
 - [/] Stories 🟤
-- [ ] Form popup 🔴
 - [ ] Form validation 🔴
 - [ ] Toast 🔴
 - [ ] Local storage 🔴

@@ -6,6 +6,7 @@ import Spacer from "./Spacer";
 import { IoDocumentText, IoStatsChart } from "react-icons/io5";
 import { FaBookOpen, FaQuestion } from "react-icons/fa";
 import ExampleForm from "../img/example-form.avif";
+import ExampleFormPDF from "../pdf/example.pdf";
 
 /* ████████████████████████████████████████████████████████████████████████████████████████████████████
 STYLES
@@ -88,14 +89,14 @@ export default function sectionInfos() {
             <Spacer />
 
             <div className={sectionInfosBlockStyle}>
-                <h2 className={sectionInfosBlockTitleStyle}><IoDocumentText className={sectionInfoBlockTitleIconStyle} /> Example form</h2>
-                <a href="" target="_blank" className="cursor-eye"><img src={ExampleForm} alt="PDF Form example" /></a>
+                <h2 className={sectionInfosBlockTitleStyle}><IoDocumentText className={sectionInfoBlockTitleIconStyle} /> Specimen</h2>
+                <a href={ExampleFormPDF} target="_blank" className="cursor-eye"><img src={ExampleForm} alt="PDF Form example" /></a>
             </div>
             
             <Spacer />
 
             <div className={sectionInfosBlockStoriesStyle}>
-                <h2 className={sectionInfosBlockTitleStyle}><FaBookOpen className={sectionInfoBlockTitleIconStyle} /> Example cases</h2>
+                <h2 className={sectionInfosBlockTitleStyle}><FaBookOpen className={sectionInfoBlockTitleIconStyle} /> Stories</h2>
                 {stories.map((story) => (
                     <div className={sectionInfosBlockWithImageStyle} key={story.storyTitle}>
                         <img src={story.storyImage} alt={story.storyTitle} className={sectionInfosImageStyle}/>
