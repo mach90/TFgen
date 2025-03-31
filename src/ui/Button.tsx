@@ -1,7 +1,23 @@
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-BUTTON COMPONENT
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-export default function Button({children, buttonStyle = 'default', onClick, onMouseOver, onMouseOut}) {
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// IMPORTS
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+import { ReactNode } from "react";
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// TYPES
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+interface ButtonProps {
+  children: ReactNode;
+  buttonStyle: string;
+  onClick?: () => void;
+  onMouseOver?: () => void;
+  onMouseOut?: () => void;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// BUTTON
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+export default function Button({children, buttonStyle = "default", onClick, onMouseOver, onMouseOut}: ButtonProps) {
     const buttonStyleDefault = "px-2 py-2 flex gap-2 bg-buttonDefault text-buttonDefaultText font-heading font-medium uppercase tracking-wider text-xs md:text-sm rounded-md hover:scale-110 duration-300 cursor-finger";
     const buttonStyleTransparent = "px-2 py-2 flex gap-2 bg-transparent text-buttonTransparentText font-heading text-xs md:text-sm tracking-wider font-normal hover:underline cursor-finger";
 
@@ -14,19 +30,19 @@ export default function Button({children, buttonStyle = 'default', onClick, onMo
     const buttonStyleReset = "text-errorText hover:text-errorHover font-bold bg-error rounded-md px-3 py-2 text-xl flex flex-row gap-2 cursor-finger";
     const buttonStyleDownload = "text-validText hover:text-validHover font-bold bg-valid rounded-md px-3 py-2 text-xl flex flex-row items-center gap-2 cursor-finger";
 
-    let selectedClassName ='';
+    let selectedClassName ="";
     
-    if(buttonStyle === 'default')  selectedClassName = buttonStyleDefault;
-    if(buttonStyle === 'transparent')  selectedClassName = buttonStyleTransparent;
+    if(buttonStyle === "default")  selectedClassName = buttonStyleDefault;
+    if(buttonStyle === "transparent")  selectedClassName = buttonStyleTransparent;
 
 
-    if(buttonStyle === 'social')  selectedClassName = buttonStyleSocial;
-    if(buttonStyle === 'disabled') selectedClassName =  buttonStyleDisabled;
-    if(buttonStyle === 'main') selectedClassName =  buttonStyleMain;
-    if(buttonStyle === 'bounce') selectedClassName =  buttonStyleBounce;
-    if(buttonStyle === 'arrow') selectedClassName =  buttonStyleArrow;
-    if(buttonStyle === 'download') selectedClassName =  buttonStyleDownload;
-    if(buttonStyle === 'reset') selectedClassName =  buttonStyleReset;
+    if(buttonStyle === "social")  selectedClassName = buttonStyleSocial;
+    if(buttonStyle === "disabled") selectedClassName =  buttonStyleDisabled;
+    if(buttonStyle === "main") selectedClassName =  buttonStyleMain;
+    if(buttonStyle === "bounce") selectedClassName =  buttonStyleBounce;
+    if(buttonStyle === "arrow") selectedClassName =  buttonStyleArrow;
+    if(buttonStyle === "download") selectedClassName =  buttonStyleDownload;
+    if(buttonStyle === "reset") selectedClassName =  buttonStyleReset;
 
     return (
       <>

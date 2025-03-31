@@ -1,0 +1,33 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// SCROLL TO
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+export type ScrollToType = (
+    where: string, 
+    behavior?: ScrollBehavior, 
+    block?: ScrollLogicalPosition, 
+    inline?: ScrollLogicalPosition
+) => void;
+
+const ScrollTo: ScrollToType = (where, behavior = "auto", block = "start", inline = "nearest") => {
+    ////////////////////////////////////////////////////
+    if(!where) return;
+
+    ////////////////////////////////////////////////////
+    // SCROLL TO TOP
+    ///////////////////////////////////////////////////
+    if(where.toLowerCase() === "top") {
+        window.scrollTo({
+            top: 0,
+            behavior,
+        });
+        return;
+    }
+
+    ////////////////////////////////////////////////////
+    // SCROLL TO ELEMENT ID
+    ///////////////////////////////////////////////////
+    const whereToScroll = document.getElementById(where);
+    if (whereToScroll) whereToScroll.scrollIntoView({ behavior, block, inline });
+}
+
+export default ScrollTo;

@@ -1,16 +1,17 @@
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-IMPORTS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// IMPORTS
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 /* //////////////////////////////////////////////////
 ICONS
 ////////////////////////////////////////////////// */
+import { IconType } from "react-icons";
 import { FaBed, FaBookOpen, FaCalendarAlt, FaCar, FaCheckCircle, FaCreativeCommonsZero, FaNotesMedical, FaPaperclip, FaRoute, FaSmile, FaTheaterMasks, FaUser } from "react-icons/fa";
 import { MdPrivacyTip } from "react-icons/md";
 import { FaCircleXmark, FaHelmetSafety, FaTowerCell, FaUserGroup } from "react-icons/fa6";
 import { RiContactsBook2Fill, RiRocketFill } from "react-icons/ri";
 import { PiNumberCircleOneFill, PiNumberCircleTwoFill } from "react-icons/pi";
 import { IoIosBody } from "react-icons/io";
-import { LuCandlestickChart } from "react-icons/lu";
+import { LuChartCandlestick } from "react-icons/lu";
 import { TbRouteOff } from "react-icons/tb";
 import { BsFillBackpack2Fill } from "react-icons/bs";
 /* //////////////////////////////////////////////////
@@ -19,10 +20,41 @@ STORIES IMAGES
 import IllustrationUtahDesert from "../img/illustration-utah-desert.avif";
 import IllustrationVercorsMountain from "../img/illustration-vercors-mountain.avif";
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-INFOS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const infos = [
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// DATA TYPE
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+type Infos = {
+    title: string;
+    description: string;
+    icon: IconType;
+}
+
+type Stats = {
+    title: string;
+    description: string;
+    icon: IconType;
+}
+
+type Stories = {
+    storyTitle: string;
+    storyIcon: IconType;
+    storyParagraph: string;
+    storyImage: string;
+}
+
+type FormFieldsets = {
+    fieldsetId: string;
+    fieldsetTitle: string;
+    fieldsetElement: string;
+    fieldsetMenuBtn: string;
+    fieldsetIcon: IconType,
+    fieldsetDescription: string;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// INFOS DATA
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+const infos: Infos[] = [
     {
         title: 'Easy and fast',
         description: "User-friendly interface to create a comprehensive travel form in minutes.",
@@ -56,10 +88,10 @@ const infos = [
     },
 ];
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-STATS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const stats = [
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// STATS DATA
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+const stats: Stats[] = [
     {
         title: '1% never found',
         description: 'An estimated 10-30 hikers go missing in France each year and are never found.',
@@ -77,10 +109,10 @@ const stats = [
     },
 ];
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-STORIES
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const stories = [
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// STORIES DATA
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+const stories: Stories[] = [
     {
         storyTitle: "Coordinates",
         storyIcon: FaBookOpen,
@@ -107,10 +139,10 @@ const stories = [
     // },
 ]
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-FORM ELEMENTS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const formFieldsets = [
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// FORM ELEMENTS DATA
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+const formFieldsets: FormFieldsets[] = [
     {
         fieldsetId: "identityElement",
         fieldsetTitle: "IDENTITY",
@@ -188,7 +220,7 @@ const formFieldsets = [
         fieldsetTitle: "SKILLS",
         fieldsetElement: "fieldset-skills",
         fieldsetMenuBtn: "skills-btn",
-        fieldsetIcon: LuCandlestickChart,
+        fieldsetIcon: LuChartCandlestick,
         fieldsetDescription: "To know what you are capable of",
     },
     {
@@ -233,7 +265,7 @@ const formFieldsets = [
     },
 ]
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-EXPORTS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// EXPORT
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 export { infos, stats, stories, formFieldsets };

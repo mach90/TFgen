@@ -1,38 +1,38 @@
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-IMPORTS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// IMPORTS
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 import { useEffect, useState } from "react";
 import { formFieldsets } from "../data/data.js";
+import ScrollTo from "../utils/scrollTo.js";
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-STYLES
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-const menuStyle = "flex flex-col gap-2 bg-bgForm bg-no-repeat bg-cover py-4 px-8 rounded-md h-max justify-center sticky top-32 hidden md:block shadow-lg";
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// STYLES
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+const menuStyle = "flex flex-col gap-2 py-4 px-8 rounded-md h-max justify-center sticky top-32 hidden md:block";
 const menuButtonStyle = "flex flex-row gap-2 text-formSubheading items-center text-sm font-medium py-1 cursor-finger";
 const menuButtonActiveStyle = "flex flex-row gap-2 text-formHover items-center text-sm font-medium py-1 cursor-finger";
 const menuButtonLabelStyle = "hidden lg:block";
 const menuIconSize = 32;
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-FORM MENU COMPONENT
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-function FormMenu({ScrollTo}) {
-    /* ////////////////////////////////////////////////////////////////////////////////////////////////////
-    WILL DETECT CURRENTLY OBSERVED FORM FIELDSET
-    AND SET CORRESPONDING TAB MENU TO ACTIVE STATE
-    //////////////////////////////////////////////////////////////////////////////////////////////////// */
-    const [isActive, setIsActive] = useState(false);
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// FORM MENU
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+function FormMenu() {
+    ////////////////////////////////////////////////////
+    // WILL DETECT CURRENTLY OBSERVED FORM FIELDSET
+    // AND SET CORRESPONDING TAB MENU TO ACTIVE STATE
+    ///////////////////////////////////////////////////
+    const [isActive, setIsActive] = useState("identity-btn");
 
     useEffect(() => {
 
         const handleScroll = () => {
-
             /* //////////////////////////////////////////////////
             IF SCROLL POSITION IS AT THE VERY BEGINNING OF THE PAGE
             NO MENU TAB SHOULD BE ACTIVE
             ////////////////////////////////////////////////// */
             if (window.scrollY === 0) {
-                setIsActive(false);
+                setIsActive("identity-btn");
             }
 
             /* //////////////////////////////////////////////////
