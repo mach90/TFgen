@@ -6,10 +6,10 @@ import { ReactNode } from "react";
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // TYPES
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-interface ButtonProps {
+type ButtonProps = {
   children: ReactNode;
   buttonStyle: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   onMouseOver?: () => void;
   onMouseOut?: () => void;
 }
@@ -20,7 +20,6 @@ interface ButtonProps {
 export default function Button({children, buttonStyle = "default", onClick, onMouseOver, onMouseOut}: ButtonProps) {
     const buttonStyleDefault = "px-2 py-2 flex gap-2 bg-buttonDefault text-buttonDefaultText font-heading font-medium uppercase tracking-wider text-xs md:text-sm rounded-md hover:scale-110 duration-300 cursor-finger";
     const buttonStyleTransparent = "px-2 py-2 flex gap-2 bg-transparent text-buttonTransparentText font-heading text-xs md:text-sm tracking-wider font-normal hover:underline cursor-finger";
-
 
     const buttonStyleSocial = "text-textColor2 hover:text-colorTextLight font-heading tracking-wider bg-textColor1 rounded-md px-3 py-2 text-md flex gap-2 font-heading font-normal cursor-finger";
     const buttonStyleDisabled = "text-gray-300 bg-gray-700 hover:bg-gray-600 hover:text-white rounded-md px-3 py-2 text-xl flex gap-2 cursor-finger";
@@ -34,7 +33,6 @@ export default function Button({children, buttonStyle = "default", onClick, onMo
     
     if(buttonStyle === "default")  selectedClassName = buttonStyleDefault;
     if(buttonStyle === "transparent")  selectedClassName = buttonStyleTransparent;
-
 
     if(buttonStyle === "social")  selectedClassName = buttonStyleSocial;
     if(buttonStyle === "disabled") selectedClassName =  buttonStyleDisabled;

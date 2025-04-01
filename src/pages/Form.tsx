@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 import { useEffect, useReducer } from "react";
 import Container from "../ui/Container";
-import SectionForm from "../components/SectionForm";
+import SectionForm from "../features/form/SectionForm";
 import ControlArrowUp from "../ui/ControlArrowUp";
 import ScrollTo from "../utils/scrollTo";
 

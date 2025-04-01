@@ -4,36 +4,36 @@
 /* //////////////////////////////////////////////////
 DEPENDENCIES
 ////////////////////////////////////////////////// */
-import { FormEvent, useState } from 'react';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { Tooltip } from 'react-tooltip'
-import ScrollTo from '../utils/scrollTo';
-import { type Action, type State } from '../pages/Form';
+import { FormEvent, useState } from "react";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import { Tooltip } from "react-tooltip"
+import ScrollTo from "../../utils/scrollTo";
+import { type Action, type State } from "../../pages/Form";
 
 /* //////////////////////////////////////////////////
 COMPONENTS
 ////////////////////////////////////////////////// */
-import Button from '../ui/Button';
-import MyDocument from './SectionDocument';
-import FormMenu from './FormMenu';
+import Button from "../../ui/Button";
+import SectionDocument from "../document/SectionDocument";
+import FormMenu from "./FormMenu";
 /* //////////////////////////////////////////////////
 ICONS
 ////////////////////////////////////////////////// */
-import { FaBed, FaCalendarAlt, FaCar, FaDownload, FaNotesMedical, FaPaperclip, FaRoute, FaTheaterMasks, FaTrashAlt, FaUser } from 'react-icons/fa';
-import { IoIosBody, IoMdHelpCircleOutline } from 'react-icons/io';
-import { FaTowerCell, FaUserGroup } from 'react-icons/fa6';
-import { RiContactsBook2Fill } from 'react-icons/ri';
-import { LuChartCandlestick } from 'react-icons/lu';
-import { TbRouteOff } from 'react-icons/tb';
-import { BsFillBackpack2Fill } from 'react-icons/bs';
-import { BiLoaderCircle } from 'react-icons/bi';
-import { IoSave } from 'react-icons/io5';
-import { FiAlertTriangle } from 'react-icons/fi';
+import { FaBed, FaCalendarAlt, FaCar, FaDownload, FaNotesMedical, FaPaperclip, FaRoute, FaTheaterMasks, FaTrashAlt, FaUser } from "react-icons/fa";
+import { IoIosBody, IoMdHelpCircleOutline } from "react-icons/io";
+import { FaTowerCell, FaUserGroup } from "react-icons/fa6";
+import { RiContactsBook2Fill } from "react-icons/ri";
+import { LuChartCandlestick } from "react-icons/lu";
+import { TbRouteOff } from "react-icons/tb";
+import { BsFillBackpack2Fill } from "react-icons/bs";
+// import { BiLoaderCircle } from "react-icons/bi";
+import { IoSave } from "react-icons/io5";
+import { FiAlertTriangle } from "react-icons/fi";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // STYLES
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-import 'react-tooltip/dist/react-tooltip.css'
+import "react-tooltip/dist/react-tooltip.css";
 
 const formSectionStyle = "bg-bgPattern flex flex-row py-32 px-4 sm:px-6 gap-12 justify-center h-full font-default"
 
@@ -150,10 +150,10 @@ const SectionForm: React.FC<SectionFormProps> = ({state, dispatch}) => {
   /* //////////////////////////////////////////////////
   Function to RESET FORM
   ////////////////////////////////////////////////// */
-  function resetForm(e: FormEvent<HTMLFormElement>){
+  function resetForm(e: React.MouseEvent<HTMLButtonElement>){
     e.preventDefault();
     // FORM ROOT
-    const formRoot = e.currentTarget.closest<HTMLFormElement>('.formRoot');
+    const formRoot = e.currentTarget.closest<HTMLFormElement>(".formRoot");
     if (!formRoot) return;
 
     // PAYLOAD
@@ -246,13 +246,13 @@ const SectionForm: React.FC<SectionFormProps> = ({state, dispatch}) => {
         BUTTONS: GENERATE/DOWNLOAD, RESET        
         //////////////////////////////////////////////////////////////////////////////////////////////////// */}
         <div className={formControlsStyle}>
-          {editing && <button className={formButtonGenerateStyle} id="submitForm" type="submit" onClick={() => ScrollTo('pdfviewer', 'smooth')}><IoSave /></button>}
+          {editing && <button className={formButtonGenerateStyle} id="submitForm" type="submit" onClick={() => ScrollTo("pdfviewer", "smooth")}><IoSave /></button>}
           {!editing && (
-            <PDFDownloadLink document={<MyDocument state={state}/>} fileName={`EPA-${state.thisIsOurDate}.pdf`}>
-              {({ loading }) => loading ? <Button buttonStyle='disabled'><BiLoaderCircle /></Button> : <Button buttonStyle='download'><FaDownload /></Button>}
+            <PDFDownloadLink document={<SectionDocument state={state}/>} fileName={`EPA-${state.thisIsOurDate}.pdf`}>
+              <Button buttonStyle="download"><FaDownload /></Button>
             </PDFDownloadLink>
           )}
-          <Button buttonStyle='reset' id="resetForm" onClick={(e) => resetForm(e)}><FaTrashAlt /></Button>
+          <Button buttonStyle="reset" onClick={(e) => resetForm(e!)}><FaTrashAlt /></Button>
         </div>
         
         {/* ////////////////////////////////////////////////////////////////////////////////////////////////////
