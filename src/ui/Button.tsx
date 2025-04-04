@@ -27,7 +27,7 @@ export default function Button({children, buttonStyle = "default", onClick, onMo
     const buttonStyleBounce = "text-gray-300 bg-teal-800 hover:bg-teal-600 hover:text-white flex rounded-md px-3 py-2 text-sm hover:animate-bounce gap-2 cursor-finger";
     const buttonStyleArrow = "text-buttonDefaultText hover:text-buttonDefaultText font-bold bg-buttonDefault rounded-md px-3 py-2 text-xl flex gap-2 cursor-finger";
     const buttonStyleReset = "text-errorText hover:text-errorHover font-bold bg-error rounded-md px-3 py-2 text-xl flex flex-row gap-2 cursor-finger";
-    const buttonStyleDownload = "text-validText hover:text-validHover font-bold bg-valid rounded-md px-3 py-2 text-xl flex flex-row items-center gap-2 cursor-finger";
+    const buttonStyleDownload = "text-validText hover:text-validHover font-bold bg-valid rounded-md px-3 py-2 text-sm flex flex-row items-center gap-2 cursor-finger";
 
     let selectedClassName ="";
     

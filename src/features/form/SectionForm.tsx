@@ -9,6 +9,7 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import { Tooltip } from "react-tooltip"
 import ScrollTo from "../../utils/scrollTo";
 import { type Action, type State } from "../../pages/Form";
+import toast from "react-hot-toast";
 
 /* //////////////////////////////////////////////////
 COMPONENTS
@@ -48,7 +49,7 @@ const formInputStyle = "bg-formField text-formFieldText p-1 cursor-input";
 const formSelectStyle = "bg-formField text-formFieldText p-1 cursor-triangle";
 const formOptionStyle = "cursor-triangle";
 
-const formControlsStyle = "fixed bottom-20 right-5 flex flex-rpw gap-4 items-center z-20";
+const formControlsStyle = "fixed bottom-5 right-5 flex flex-rpw gap-4 items-center z-20";
 
 const formButtonGenerateStyle = "text-buttonDefaultText hover:text-buttonDefaultText font-bold bg-buttonDefault rounded-md px-3 py-2 text-xl flex gap-2 items-center cursor-finger";
 
@@ -143,6 +144,9 @@ const SectionForm: React.FC<SectionFormProps> = ({state, dispatch}) => {
     // DISPATCH ACTION
     dispatch({type: "formSubmitted", payload: formPayload});
 
+    // TOAST
+    toast.success("PDF created.");
+
     // EDITING STATE CHANGE
     setEditing(false);
   }
@@ -219,6 +223,9 @@ const SectionForm: React.FC<SectionFormProps> = ({state, dispatch}) => {
     // FORM INPUT RESET
     formRoot.reset();
 
+    // TOAST
+    toast.success("Form reset.");
+
     // EDITING STATE
     setEditing(true);
 
@@ -249,7 +256,7 @@ const SectionForm: React.FC<SectionFormProps> = ({state, dispatch}) => {
           {editing && <button className={formButtonGenerateStyle} id="submitForm" type="submit" onClick={() => ScrollTo("pdfviewer", "smooth")}><IoSave /></button>}
           {!editing && (
             <PDFDownloadLink document={<SectionDocument state={state}/>} fileName={`EPA-${state.thisIsOurDate}.pdf`}>
-              <Button buttonStyle="download"><FaDownload /></Button>
+              <Button buttonStyle="download">DOWNLOAD <FaDownload /></Button>
             </PDFDownloadLink>
           )}
           <Button buttonStyle="reset" onClick={(e) => resetForm(e!)}><FaTrashAlt /></Button>
