@@ -1,15 +1,16 @@
 /* //////////////////////////////////////////////////
 IMPORTS
 ////////////////////////////////////////////////// */
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import { type State } from "../../pages/Form";
 
 /* //////////////////////////////////////////////////
 STYLES https://react-pdf.org/styling
 ////////////////////////////////////////////////// */
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'col',
-    backgroundColor: '#E4E4E4',
+    flexDirection: "column",
+    backgroundColor: "#E4E4E4",
     fontSize: 8,
     padding: 10,
   },
@@ -30,35 +31,35 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   sectionTitle: { 
-    color: 'black', 
-    backgroundColor: 'grey',
+    color: "black", 
+    backgroundColor: "grey",
     padding: 2,
   },
   sectionLabel: { 
-    color: 'black', 
+    color: "black", 
     padding: 2,
-    width: '20%',
+    width: "20%",
   },
   sectionOutput: { 
-    color: 'black', 
-    backgroundColor: 'lightgrey',
+    color: "black", 
+    backgroundColor: "lightgrey",
     padding: 2,
-    width: '80%',
-    textAlign: 'justify',
+    width: "80%",
+    textAlign: "justify",
   },
   sectionGroup: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   sectionSup: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   foot: {
-    textAlign: 'center',
+    textAlign: "center",
   },
   reminder: {
-    textAlign: 'center',
-    backgroundColor: 'black',
-    color: 'white',
+    textAlign: "center",
+    backgroundColor: "black",
+    color: "white",
     padding: 2,
     marginTop: 2,
   }
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
 PDF DOCUMENT COMPONENT
 This is the PDF Form that will be created
 ////////////////////////////////////////////////// */
-export default function SectionDocument ({state}) {
+export default function SectionDocument ({ state }: { state: State }) {
   /* //////////////////////////////////////////////////
   STATE VARIABLES
   ////////////////////////////////////////////////// */

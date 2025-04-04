@@ -1,16 +1,16 @@
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-IMPORTS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
-import { infos, stats, stories } from "../data/data.js";
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// IMPORTS
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+import { infos, stats, stories } from "../../data/data.ts";
 import Spacer from "./Spacer";
 import { IoDocumentText, IoStatsChart } from "react-icons/io5";
 import { FaBookOpen, FaQuestion } from "react-icons/fa";
-import ExampleForm from "../img/example-form.avif";
-import ExampleFormPDF from "../pdf/example.pdf";
+import ExampleForm from "../../img/example-form.avif";
+import ExampleFormPDF from "../../pdf/example.pdf";
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-STYLES
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// STYLES
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 const sectionInfosContainerStyle = "bg-bgPattern w-full font-default flex flex-col items-center py-24";
 
 const sectionInfosBlockStyle = "w-full h-full flex flex-col gap-12 justify-center items-center p-12 lg:px-[20%]";
@@ -22,14 +22,12 @@ const sectionInfosBlockParagraphStyle = "text-lg font-normal max-w-3xl text-just
 
 const sectionInfos2CardsContainerStyle = "grid md:grid-cols-2 gap-12 justify-between items-center";
 const sectionInfos3CardsContainerStyle = "grid md:grid-cols-2 xl:grid-cols-3 gap-12 justify-between items-center";
-const sectionInfosImageContainerStyle = "bg-exampleForm bg-cover bg-top bg-no-repeat p-4 rounded-r-2xl";
 const sectionInfosImageParagraphStyle = "p-8 flex flex-col gap-4 justify-between";
 
 const sectionInfosImageStyle = "h-max w-full md:rounded-r-2xl";
 
 const sectionInfosCardContainerInfosStyle = "relative flex flex-col sm:flex-col gap-4 items-end rounded-xl lg:max-w-96 translate-y-2 hover:translate-y-0 duration-200 h-full bg-alternate shadow-lg";
 const sectionInfosCardContainerStatsStyle = "relative flex flex-col sm:flex-col gap-4 items-end rounded-xl lg:max-w-96 translate-y-2 hover:translate-y-0 duration-200 h-full bg-primaryIconBg bg-alternate shadow-lg";
-// const sectionInfosCardCutStyle = "absolute bottom-[-2px] right-[-2px] bg-primary w-10 h-10 border-t-2 border-l-2 rounded-tl-full border-dashed border-primaryBorder";
 const sectionInfosCardIconInfosStyle = "absolute z-20 top-2 right-4 font-bold text-primaryIcon text-5xl p-2 bg-primaryCard rounded-full";
 const sectionInfosCardIconStatsStyle = "absolute z-20 top-2 right-4 font-bold text-primaryHeading text-5xl p-2 bg-primaryCard rounded-full";
 const sectionInfosCardInfosContainerStyle = "flex flex-col gap-2 bg-bgCard card-clip-path rounded-lg pt-16 pb-6 px-6 h-full w-full";
@@ -38,9 +36,9 @@ const sectionInfosCardInfosDescriptionStyle = "text-md text-primaryText";
 
 const iconSize = 40;
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-SECTION HERO COMPONENT
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// INFOS SECTION
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function sectionInfos() {
     /* //////////////////////////////////////////////////
     JSX
@@ -112,3 +110,14 @@ export default function sectionInfos() {
         </div>
     )
 }
+
+
+/*
+Privacy
+The Travel Form PDF is generated entirely client-side using JavaScript and React-pdf library, ensuring data privacy and security.
+No form data or resulting PDF is stored or processed on any server, keeping your information confidential.
+
+About the project
+A strong interest in mysterious disappearances led to the realization that many tragic outcomes could be prevented with timely action and better knowledge of individuals.
+This insight inspired the creation of this project. Its goal is to promote safer travel and encourage people to plan their trips better while involving others.
+*/

@@ -1,13 +1,13 @@
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-IMPORTS
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// IMPORTS
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 import { NavLink } from "react-router-dom";
-import NavButton from "./Button";
+import Button from "../../ui/Button";
 import { BiSolidChevronsDown } from "react-icons/bi";
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-STYLES
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// STYLES
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 const sectionHeroContainerStyle = "bg-bgIsoline bg-no-repeat bg-fit font-default flex flex-col justify-center items-center gap-16 py-16 min-h-[calc(100vh-0px)]";
 const sectionHeroBlockStyle = "w-full h-full flex flex-col gap-10 md:gap-20 justify-center items-center p-6 md:p-12 lg:px-[20%]";
 
@@ -21,9 +21,9 @@ const sectionHeroCtaTextStyle = "text-sm md:text-lg lg:text-2xl font-medium text
 
 const sectionHeroScrollStyle = "text-md md:text-2xl lg:text-3xl text-secondaryText animate-bounce flex flex-col justify-center items-center";
 
-/* ████████████████████████████████████████████████████████████████████████████████████████████████████
-SECTION HERO COMPONENT
-████████████████████████████████████████████████████████████████████████████████████████████████████ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// HERO SECTION
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function SectionHero() {
     /* //////////////////////////////////////////////////
     JSX
@@ -40,7 +40,7 @@ export default function SectionHero() {
                 <div className={sectionHeroCtaStyle}>
                     <h2 className={sectionHeroCtaTitleStyle}>Create your Travel Form</h2>
                     <p className={sectionHeroCtaTextStyle}>It's easy and respect your privacy</p>
-                    <NavLink to="/form"><NavButton buttonStyle="default">Get started now</NavButton></NavLink>
+                    <NavLink to="/form"><Button buttonStyle="default">Get started now</Button></NavLink>
                 </div>
 
                 <div className={sectionHeroScrollStyle}>More infos <BiSolidChevronsDown size={24} /></div>
